@@ -132,3 +132,9 @@ a {
 	background-color: white;
 }
 
+
+@media (max-width: 600px){
+	.preview {
+		margin-bottom: 40px;
+	}
+}
