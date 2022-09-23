@@ -11,15 +11,15 @@ function App() {
 			<div className="content">
 				<Routes>
 					<Route 
-						path="/" 
+						path="/portfolio" 
 						element={<Home/>}
 					/>
 					<Route 
-					path="/about"
-					element={<About/>}
+						path="/portfolio/about"
+						element={<About/>}
 					/>
 					<Route
-						path="/project/:title"
+						path="/portfolio/project/:title"
 					/>
 				</Routes>
 			</div>
