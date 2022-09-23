@@ -1,14 +1,12 @@
 import ProjectPreview from "./ProjectPreview";
 const ProjectGrid = ({ projects, title }) => {
-	console.log(projects[0].title);
 	return (  
 		<div className="projects">
-			<h2>{title}</h2>
+			<h1>{title}</h1>
+			<br />
 			<div className="project-grid">
 				{projects.map((project) => (
-					<div key={project.key}>
-						<ProjectPreview project={project} />
-					</div>
+					<ProjectPreview project={project} />
 				))}
 			</div>
 

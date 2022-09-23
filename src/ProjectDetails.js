@@ -1,7 +1,7 @@
-const ProjectDetails = ( ) => {
+const ProjectDetails = ( { link } ) => {
 	return (  
 		<div className="project">
-			<h2>Hello</h2>
+			{window.location.replace(link)}
 		</div>
 	);
 }

@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './Navbar';
 import Home from './Home';
+import About from './About';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
 					/>
 					<Route 
 					path="/about"
-
+					element={<About/>}
 					/>
 					<Route
 						path="/project/:title"

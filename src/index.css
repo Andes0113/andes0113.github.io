@@ -3,7 +3,12 @@
 * {
   margin: 0;
   font-family: "Roboto";
+  background-color: #003366;
   /* border: 1px solid red; */
+}
+
+h1, h3{
+	color: white;
 }
 
 .navbar {
@@ -25,10 +30,14 @@
 }
 
 .navbar a:hover {
-  color: #f1356d;
+  color: #80DAEB;
 }
+.aboutLinks a:hover {
+	color: #80DAEB;
+}
+
 .content {
-  max-width: 80%;
+  max-width: 85%;
   margin: 40px auto;
   padding: 20px;
 }
@@ -36,28 +45,82 @@
 .projects {
   /* display: flex; */
   align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .project-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   /* width: 90%; */
 }
 
 .preview {
-  width: 270px;
-  height: 270px;
-  border: 1px solid black;
+  width: 280px;
+  height: 280px;
+  border: 1px solid gray;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  text-align: center;
+  background-color: white;
+  margin: 5px;
+  border-radius: 10px;
 }
 .preview-details {
 	position: relative;
 	width: 100%;
 	bottom: 0;
+	background-color: lightgray;
+	border-radius: 10px;
 }
-.preview a {
+
+.technologies {
+	display: flex;
+	justify-content: flex-start; 
+	flex-wrap: wrap;
+	background-color: white;
+}
+
+.technology {
+	position: relative;
+	bottom: 0;
+	background-color: lightblue;
+	border-radius: 10px;
+	padding: 5px;
+	margin: 1px;
+}
+
+a {
   text-decoration: none;
+  color: black;
+  background-color: white;
+  border-radius: 5px;
 }
+
+.about {
+	text-align: center;
+}
+.aboutBody{
+	margin: 20px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.aboutLinks {
+	margin: 20px;
+	background-color: white;
+	font-size: 30px;
+}
+.aboutText{
+	width: 500px;
+	background-color: white;
+}
+.socialLink {
+	display: flex;
+	justify-content: center;
+	text-align: left;
+	background-color: white;
+}
+
