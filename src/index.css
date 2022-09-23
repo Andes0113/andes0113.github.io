@@ -136,8 +136,6 @@ a {
 @media (max-width: 600px){
 	.preview {
 		margin-bottom: 40px;
-	}
-	.preview-details {
-		margin-bottom: 20px;
+		margin-top: 20px;
 	}
 }
