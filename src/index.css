@@ -137,4 +137,7 @@ a {
 	.preview {
 		margin-bottom: 40px;
 	}
+	.preview-details {
+		margin-bottom: 20px;
+	}
 }
