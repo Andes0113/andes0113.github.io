@@ -107,11 +107,19 @@ a {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
+	font-size: 30px;
+}
+.aboutBody img {
+	height: 35px;
 }
 .aboutLinks {
 	margin: 20px;
 	background-color: white;
 	font-size: 30px;
+}
+.contactMe {
+	margin: 20px;
+	background-color: white;
 }
 .aboutText{
 	width: 500px;
