@@ -16,7 +16,7 @@ const Projects = () => {
           }
         />
         <ProjectPreview
-          name={'Volunturbo'}
+          name={'VolunTurbo'}
           image={'Volunturbo.png'}
           description={
             'I built a website using React and Django that matches volunteers \
