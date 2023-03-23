@@ -10,18 +10,10 @@ const Experience = () => {
           title={'Software Engineer Intern'}
           technologies={['JavaScript', 'React', 'AWS', 'Python', 'OpenCV']}
           description={[
-            'Built alert system using computer-vision to notify users if certain events occur needing attention',
-            'Expanded product offerings by using the MERN stack to develop parking payment platform for security service',
+            'Built mission-critical software that helped expand the company from five employees to a fast-growing startup building security software with contracts with several high-profile organizations',
+            'Built alert system using computer-vision to notify users if certain events occur needing attention. Allowed users to chain events and detections to create complex and individual case-specific triggers',
+            'Built geography-based multi-camera event-querying system, allowing users to find, events, objects, etc that occurred on cameras within range of a user-drawn section. Uses computer vision to determine where and when events may have occurred',
             'Developed camera viewing pages and integrated other MIDL software in security system dashboard redesign',
-          ]}
-        />
-        <ExperienceItem
-          company={'Introduction to Software Engineering'}
-          title={'Teaching Assistant'}
-          technologies={[]}
-          description={[
-            'Teach students about common software engineering practices like Agile, Scrum, system architecture, testing, quality management, security, code analysis, and more.',
-            'Handle conflicts between students working in final group project.',
           ]}
         />
         <ExperienceItem
