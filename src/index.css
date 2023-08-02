@@ -14,12 +14,12 @@ html {
 }
 
 #aboutMe {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   text-align: left;
   padding: 1rem;
   border-radius: 1rem;
   gap: 1rem;
-  flex-direction: row;
 }
 #aboutMe > :first-child {
   flex: 4;
@@ -155,13 +155,19 @@ a {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  padding: 2rem;
 }
 
-.skill-list li {
+.skill-item {
   list-style-type: circle;
   color: #6082b6;
   padding: 1.5rem;
   font-size: 1.4rem;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.skill-item:hover {
+  transform: scale(1.5);
 }
 
 #project-container {
@@ -187,11 +193,11 @@ a {
   border: 1px solid black;
 }
 .preview:hover img {
-  transform: scale(1.2);
-  -ms-transform: scale(1.2); /* IE 9 */
-  -moz-transform: scale(1.2); /* Firefox */
-  -webkit-transform: scale(1.2); /* Safari and Chrome */
-  -o-transform: scale(1.2); /* Opera */
+  transform: scale(1.1);
+  -ms-transform: scale(1.1); /* IE 9 */
+  -moz-transform: scale(1.1); /* Firefox */
+  -webkit-transform: scale(1.1); /* Safari and Chrome */
+  -o-transform: scale(1.1); /* Opera */
 }
 .preview:hover a {
   text-decoration: underline !important;
@@ -260,11 +266,17 @@ a {
 }
 
 @media (max-width: 768px) {
+  #aboutMe {
+    display: flex;
+    flex-direction: column;
+    padding: 0rem;
+  }
   #navbar .links {
     display: none;
   }
   .aboutBody {
     flex-direction: column;
+    margin: 0.25rem;
   }
   .description {
     width: 100%;

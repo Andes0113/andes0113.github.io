@@ -112,9 +112,9 @@ const Home = () => {
   return (
     <div id="home">
       <About />
+      <Experience />
       <Skills />
       <Projects />
-      <Experience />
     </div>
   );
 };

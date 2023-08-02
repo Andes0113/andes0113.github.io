@@ -11,42 +11,42 @@ const Skills = () => {
         </p>
         <div id="skills-list">
           <div className="skill-section">
-            <h2>Programming Languages</h2>
+            <h2>Backend</h2>
             <div className="skill-list">
-              <li>JavaScript</li>
-              <li>Python</li>
-              <li>C++</li>
-              <li>C#</li>
-              <li>R</li>
-            </div>
-          </div>
-          <div className="skill-section">
-            <h2>Frameworks</h2>
-            <div className="skill-list">
-              <li>React</li>
-              <li>Django</li>
-              <li>Express</li>
-              <li>Node</li>
-              <li>scikit-learn</li>
-              <li>Unity</li>
-            </div>
-          </div>
-          <div className="skill-section">
-            <h2>Tools</h2>
-            <div className="skill-list">
-              <li>AWS</li>
-              <li>Docker</li>
-              <li>Git</li>
-              <li>Unix</li>
-              <li>MS Azure</li>
-              <li>Plenty more...</li>
+              <div className="skill-item">Python</div>
+              <div className="skill-item">TypeScript</div>
+              <div className="skill-item">Go</div>
+              <div className="skill-item">C++</div>
+              <div className="skill-item">Django</div>
+              <div className="skill-item">Next.js</div>
             </div>
           </div>
           <div className="skill-section">
             <h2>Databases</h2>
             <div className="skill-list">
-              <li>NoSQL {'(MongoDB, Firebase)'}</li>
-              <li>SQL {'(PostgreSQL, MySQL)'}</li>
+              <div className="skill-item">NoSQL {'(MongoDB, Firebase)'}</div>
+              <div className="skill-item">SQL {'(PostgreSQL, Oracle)'}</div>
+            </div>
+          </div>
+          <div className="skill-section">
+            <h2>Frontend</h2>
+            <div className="skill-list">
+              <div className="skill-item">JavaScript/TypeScript</div>
+              <div className="skill-item">React</div>
+              <div className="skill-item">HTML/CSS</div>
+              <div className="skill-item">R</div>
+              <div className="skill-item">Svelte</div>
+            </div>
+          </div>
+          <div className="skill-section">
+            <h2>Tools</h2>
+            <div className="skill-list">
+              <div className="skill-item">AWS</div>
+              <div className="skill-item">Docker</div>
+              <div className="skill-item">Git</div>
+              <div className="skill-item">Unix</div>
+              <div className="skill-item">MS Azure</div>
+              <div className="skill-item">Plenty more...</div>
             </div>
           </div>
         </div>

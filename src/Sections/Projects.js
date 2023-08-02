@@ -40,9 +40,7 @@ const Projects = () => {
           description={
             'My final project in Data Structures and Algorithms, where users search Airbnbs in New York City by neighborhood. \
           Read about how I implemented convex shape boundary detection to improve \
-          the user experience, and cut query time by 98% by coding data structures from scratch \
-          (including a clever combination that resulted in a never-before-implemented \
-          data structure).'
+          the user experience, and cut query time by 98% by coding data structures from scratch.'
           }
         />
       </div>

@@ -8,12 +8,13 @@ const Experience = () => {
         <ExperienceItem
           company={'MIDL Technology'}
           title={'Software Engineer Intern'}
-          technologies={['JavaScript', 'React', 'AWS', 'Python', 'OpenCV']}
+          technologies={['JavaScript', 'AWS', 'Next.js', 'Python', 'OpenCV']}
           description={[
-            'Built mission-critical software that helped expand the company from five employees to a fast-growing startup building security software with contracts with several high-profile organizations',
-            'Built alert system using computer-vision to notify users if certain events occur needing attention. Allowed users to chain events and detections to create complex and individual case-specific triggers',
-            'Built geography-based multi-camera event-querying system, allowing users to find, events, objects, etc that occurred on cameras within range of a user-drawn section. Uses computer vision to determine where and when events may have occurred',
-            'Developed camera viewing pages and integrated other MIDL software in security system dashboard redesign',
+            'Built mission-critical software that helped expand company from five employees to a fast-growing startup with contracts with several high-profile organizations in need of large-scale surveillance solutions.',
+            'Secured private customer data by building full stack authentication/authorization service with fine-grain permissions to component level, two factor authentication, forgot password, and multi identity provider support.',
+            'Engineered full stack floor map / satellite map system with support for live viewing of cameras, placing and editing camera markers, live control of facilities, and real-time digital cloning with accurate locations for objects captured on cameras',
+            'Designed and created geography-based multi-camera event-querying system, allowing users to find events, objects, etc that on cameras within range of a user-drawn section',
+            'Improved user experience and secured data by developing caching that sped page loads by 91% and requests 2x on average',
           ]}
         />
         <ExperienceItem

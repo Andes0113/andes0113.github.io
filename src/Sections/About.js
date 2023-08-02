@@ -7,50 +7,48 @@ const About = () => {
       <h1>Hi, I'm Alex - Full Stack Engineer and Student.</h1>
       <div className="aboutBody">
         <div id="aboutMe">
-          <div>
-            <p>
-              Hi! I'm Alex, and I'm a student in my second year at the
-              University of Florida who loves building efficient, innovative,
-              and beautiful software that I can be proud of. I'm an extremely
-              motivated and ambitious developer, but I always look to learn as
-              much as I can from others and take on new challenges and
-              opportunities.
-            </p>
-            <p>
-              My parents were both artists, but my creative outlet as a kid came
-              from Pokémon. I spent hours creating these games on hundreds of
-              pieces of scratch paper, with my own routes, cities, and Pokémon,
-              which I gave full movesets and stat blocks derived from
-              Bulbapedia. Eventually, I ran out of paper, and only then did I
-              start to learn all about actually building these games through
-              programming.
-            </p>
-          </div>
-          <div>
-            <p>
-              My lifelong pursuits in learning and finding opportunity in and
-              out of the classroom have led me to fall in love with building
-              software. You can learn all about what languages and frameworks I
-              have experience with{' '}
-              <a className="p-link" href="#skills">
-                below
-              </a>
-              .
-            </p>
-            <p>
-              I've excelled academically with a 3.93 GPA in the honors program,
-              but my proudest pursuits come outside of the classroom. I've built
-              quite a few projects, which you can also find{' '}
-              <a className="p-link" href="#projects">
-                below
-              </a>
-              . Additionally, you can read about some of my{' '}
-              <a className="p-link" href="#experience">
-                experience
-              </a>{' '}
-              in the field.
-            </p>
-          </div>
+          <p>
+            Hi! I'm Alex, and I'm a student in my third year at the University
+            of Illinois Urbana Champaign who loves building efficient,
+            innovative, and beautiful software that I can be proud of. I'm an
+            extremely motivated and ambitious developer, but I always look to
+            learn as much as I can from others and take on new challenges and
+            opportunities.
+          </p>
+          <p>
+            For the past year, I've interned at a startup as a fullstack
+            engineer, where I have gained valuable experience designing and
+            working on several high-importance projects spanning the frontend
+            and backend that have allowed the company to grow from five
+            employees to a fast-growing company with contracts with several
+            high-profile organizations with large-scale security needs. You can
+            read more about my industry experience{' '}
+            <a className="p-link" href="#experience">
+              here
+            </a>
+          </p>
+          <p>
+            I have a great love for learning, which has led me to restlessly
+            expand my domain knowledge while maintaining and improving my skills
+            in areas I already have experience in. To improve the clarity and
+            efficiency of my code, I've read about best practices in books like{' '}
+            <i>Designing Data-Intensive Applications</i> and <i>Clean Code</i>.
+            You can learn all about what languages and frameworks I have
+            experience with{' '}
+            <a className="p-link" href="#skills">
+              below
+            </a>
+            .
+          </p>
+          <p>
+            I've excelled academically, but my proudest pursuits come outside of
+            the classroom. I have worked to become the Lead Developer of the
+            Software Engineering Club, where I lead a team of 20+ developers.
+            I've built quite a few projects, which you can find{' '}
+            <a className="p-link" href="#projects">
+              below.
+            </a>
+          </p>
         </div>
         <div id="about-bottom">
           <div className="info-box">
@@ -82,7 +80,7 @@ const About = () => {
             </div>
             <div className="socialLink">
               <FiMail size={'2rem'} />
-              <a href="mailto:af.rowe@ufl.edu">af.rowe@ufl.edu</a>
+              <a href="mailto:alexr6@illinois.edu">alexr6@illinois.edu</a>
             </div>
           </div>
         </div>

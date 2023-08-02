@@ -8,13 +8,15 @@ const ExperienceItem = ({ company, title, technologies, description }) => {
         </div>
         <div className="technologies">
           {technologies.map((technology) => (
-            <div className="tech">{technology}</div>
+            <div className="tech" key={technology}>
+              {technology}
+            </div>
           ))}
         </div>
       </div>
       <div className="experience-description">
         {description.map((item) => (
-          <li>{item}</li>
+          <li key={item}>{item}</li>
         ))}
       </div>
     </div>
