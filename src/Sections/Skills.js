@@ -11,14 +11,14 @@ const Skills = () => {
         </p>
         <div id="skills-list">
           <div className="skill-section">
-            <h2>Backend</h2>
+            <h2>Languages</h2>
             <div className="skill-list">
               <div className="skill-item">Python</div>
               <div className="skill-item">TypeScript</div>
               <div className="skill-item">Go</div>
               <div className="skill-item">C++</div>
-              <div className="skill-item">Django</div>
-              <div className="skill-item">Next.js</div>
+              <div className="skill-item">C</div>
+              <div className="skill-item">HTML/CSS</div>
             </div>
           </div>
           <div className="skill-section">
@@ -29,13 +29,13 @@ const Skills = () => {
             </div>
           </div>
           <div className="skill-section">
-            <h2>Frontend</h2>
+            <h2>Frameworks</h2>
             <div className="skill-list">
-              <div className="skill-item">JavaScript/TypeScript</div>
               <div className="skill-item">React</div>
-              <div className="skill-item">HTML/CSS</div>
-              <div className="skill-item">R</div>
-              <div className="skill-item">Svelte</div>
+              <div className="skill-item">Django</div>
+              <div className="skill-item">Express</div>
+              <div className="skill-item">Next.js</div>
+              <div className="skill-item">FastAPI</div>
             </div>
           </div>
           <div className="skill-section">

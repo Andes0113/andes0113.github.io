@@ -8,13 +8,21 @@ const Experience = () => {
         <ExperienceItem
           company={'MIDL Technology'}
           title={'Software Engineer Intern'}
-          technologies={['JavaScript', 'AWS', 'Next.js', 'Python', 'OpenCV']}
+          technologies={[
+            'JavaScript/TypeScript',
+            'AWS',
+            'Next.js',
+            'Python',
+            'Express',
+          ]}
           description={[
-            'Built mission-critical software that helped expand company from five employees to a fast-growing startup with contracts with several high-profile organizations in need of large-scale surveillance solutions.',
-            'Secured private customer data by building full stack authentication/authorization service with fine-grain permissions to component level, two factor authentication, forgot password, and multi identity provider support.',
-            'Engineered full stack floor map / satellite map system with support for live viewing of cameras, placing and editing camera markers, live control of facilities, and real-time digital cloning with accurate locations for objects captured on cameras',
-            'Designed and created geography-based multi-camera event-querying system, allowing users to find events, objects, etc that on cameras within range of a user-drawn section',
-            'Improved user experience and secured data by developing caching that sped page loads by 91% and requests 2x on average',
+            'Built full stack mission-critical software in Next.js that helped expand company from five employees to a fast-growing startup with contracts with several high-profile organizations in need of large-scale surveillance solutions.',
+            'Built high-speed REST APIs using several languages and frameworks with complex queries across NoSQL (MongoDB) and SQL (PostgreSQL) databases, results of computer vision machine learning models, and distributed hardware systems.',
+            'Improved scalability by building logging microservice in Python with FastAPI that aggregated and served API call metadata, allowing for identification of underperforming routes and efficiency impacts of new changes.',
+            'Fortified customer data security through the development of a comprehensive full-stack authentication and authorization service, complete with two-factor authentication, fine-grained permissions, and support for identity providers.',
+            'Achieved the successful and timely delivery of intricate features under tight deadlines, utilizing React to construct dynamic interfaces that seamlessly handled real-time data via web sockets, webhooks, and REST API requests',
+            'Improved user experience by implementing caching mechanisms that sped page loads by 91% and requests 2x on average',
+            'Ensured software reliability and efficient by introducing and building comprehensive unit tests and CI/CD pipelines',
           ]}
         />
         <ExperienceItem
