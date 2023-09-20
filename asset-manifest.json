@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.0e7e435c.css",
-    "main.js": "/static/js/main.436dc0c0.js",
+    "main.js": "/static/js/main.9e803335.js",
     "static/media/SuperBNB.png": "/static/media/SuperBNB.5552758e08f15a212027.png",
     "static/media/Construction.png": "/static/media/Construction.bbe6c21bf3df025eefd8.png",
     "static/media/Ceptron.png": "/static/media/Ceptron.f05ef414c6ff66f5d1dd.png",
@@ -10,10 +10,10 @@
     "static/media/Alex Rowe Resume.pdf": "/static/media/Alex Rowe Resume.e6907638ce524b385ba7.pdf",
     "index.html": "/index.html",
     "main.0e7e435c.css.map": "/static/css/main.0e7e435c.css.map",
-    "main.436dc0c0.js.map": "/static/js/main.436dc0c0.js.map"
+    "main.9e803335.js.map": "/static/js/main.9e803335.js.map"
   },
   "entrypoints": [
     "static/css/main.0e7e435c.css",
-    "static/js/main.436dc0c0.js"
+    "static/js/main.9e803335.js"
   ]
 }
