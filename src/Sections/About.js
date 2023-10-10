@@ -56,7 +56,7 @@ const About = () => {
             <div className="socialLink">
               <FiFileText size={'2rem'} />
               <a
-                href={require('../resume/Alex Rowe Resume.pdf')}
+                href="https://drive.google.com/file/d/1tuC-0gK6IenI1jnlUNk8LXXtMQIAI6g_/view?usp=sharing"
                 target="_blank"
                 rel="noreferrer"
               >
