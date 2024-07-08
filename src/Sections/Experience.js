@@ -6,23 +6,26 @@ const Experience = () => {
       <h1>My Experience</h1>
       <div id="experience-container">
         <ExperienceItem
-          company={'MIDL Technology'}
+          company={'Wizards of the Coast'}
           title={'Software Engineer Intern'}
-          technologies={[
-            'JavaScript/TypeScript',
-            'AWS',
-            'Next.js',
-            'Python',
-            'Express',
-          ]}
+          technologies={['Go', 'C#', '.NET']}
           description={[
-            'Built full stack mission-critical software in Next.js that helped expand company from five employees to a fast-growing startup with contracts with several high-profile organizations in need of large-scale surveillance solutions.',
-            'Built high-speed REST APIs using several languages and frameworks with complex queries across NoSQL (MongoDB) and SQL (PostgreSQL) databases, results of computer vision machine learning models, and distributed hardware systems.',
+            'Reduced manual testing time by 80% and enabled continuous delivery by building a test client using C# with automated pipelines to test game services integration in a game development SDK.',
+            'Saved hundreds of hours of developer time and enhanced the reliability of in-game transactions by integrating payment processing and code redemption services within the SDK using C# and .NET.',
+            'Improved service reliability and maintainability by writing code and unit tests for microservices using Go.',
+            'Built and called gRPC endpoints to enable efficient communication between microservices.',
+          ]}
+        />
+        <ExperienceItem
+          company={'MIDL Technology'}
+          title={'Software Engineer'}
+          technologies={['TypeScript', 'AWS', 'Next.js', 'React', 'Go']}
+          description={[
+            'Developed a full stack web application using TypeScript with Next.js for a fast-growing startup with high-profile clients in need of large-scale surveillance solutions.',
+            'Wrote and optimized high-speed REST APIs with complex computation, storing data in MongoDB and PostgreSQL databases, reducing query times by up to 89% on high traffic API endpoints.',
             'Improved scalability by building logging microservice in Python with FastAPI that aggregated and served API call metadata, allowing for identification of underperforming routes and efficiency impacts of new changes.',
-            'Fortified customer data security through the development of a comprehensive full-stack authentication and authorization service, complete with two-factor authentication, fine-grained permissions, and support for identity providers.',
-            'Achieved the successful and timely delivery of intricate features under tight deadlines, utilizing React to construct dynamic interfaces that seamlessly handled real-time data via web sockets, webhooks, and REST API requests',
-            'Improved user experience by implementing caching mechanisms that sped page loads by 91% and requests 2x on average',
-            'Ensured software reliability and efficient by introducing and building comprehensive unit tests and CI/CD pipelines',
+            'Secured important contracts by building and optimizing a real-world map feature, accurately and reliably providing real-time streamed data, enhancing the user experience.',
+            'Successfully delivered intricate features under tight deadlines, constructing dynamic and responsive interfaces using React to handle real-time data via WebSockets, webhooks, and HTTPS requests.',
           ]}
         />
         <ExperienceItem
@@ -30,8 +33,7 @@ const Experience = () => {
           title={'Summer Mentee'}
           technologies={['C#', 'Unity']}
           description={[
-            'Collaborated with senior product managers for HoloLens to develop prototype in the HoloLens line alongside a low-code app builder that won “Greatest Impact on Life in the Future” at Microsoft hackathon',
-            'Learned professional and technical skills through 1-on-1 and group mentoring',
+            'Won an internal company hackathon by collaborating with senior product managers to develop a prototype for the HoloLens line and a low-code app builder for the PowerApps suite.',
           ]}
         />
         <ExperienceItem

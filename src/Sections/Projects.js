@@ -5,17 +5,26 @@ const Projects = () => {
       <h1>Projects</h1>
       <div id="project-container">
         <ProjectPreview
-          name={'Clubfinity'}
-          image={'Clubfinity.png'}
+          name={'Six Degrees'}
+          image={'Six.png'}
           description={
-            'As the Lead Developer for Clubfinity, I lead a development team \
-            of over 20 people to build an app that consolidates all platforms \
-            for clubs at UF into one app. I build features, lead workshops, \
-            lead my own personal team of four, handle deployment, and have led \
-            several major endeavors.'
+            'In my free time, I built a social media app tailored to build new connections using React Native and Go. \
+            One interesting feature includes direct messaging with live notifications using WebSockets and PostgreSQL. \
+            I also spent time exploring unfamiliar technology with this project, using Neo4J and productionizing a machine learning model.'
           }
         />
         <ProjectPreview
+          name={'Clubfinity'}
+          image={'Clubfinity.png'}
+          description={
+            'As the Lead Developer for Clubfinity, I led a development team \
+            of over 20 people to build an app that consolidates all platforms \
+            for clubs at UF into one app. I built features, led workshops, \
+            led my own personal team of four, handled deployment, and led \
+            several major endeavors.'
+          }
+        />
+        {/* <ProjectPreview
           name={'VolunTurbo'}
           image={'Volunturbo.png'}
           description={
@@ -23,7 +32,7 @@ const Projects = () => {
           with nonprofit organizations in their area based on their interests. \
           '
           }
-        />
+        /> */}
         <ProjectPreview
           name={'Ceptron'}
           image={'Ceptron.png'}

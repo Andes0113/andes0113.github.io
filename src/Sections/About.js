@@ -8,7 +8,7 @@ const About = () => {
       <div className="aboutBody">
         <div id="aboutMe">
           <p>
-            Hi! I'm Alex, and I'm a student in my third year at the University
+            Hi! I'm Alex, and I'm a student in my fourth year at the University
             of Illinois Urbana Champaign who loves building efficient,
             innovative, and beautiful software that I can be proud of. I'm an
             extremely motivated and ambitious developer, but I always look to
@@ -16,13 +16,12 @@ const About = () => {
             opportunities.
           </p>
           <p>
-            For the past year, I've interned at a startup as a fullstack
-            engineer, where I have gained valuable experience designing and
-            working on several high-importance projects spanning the frontend
-            and backend that have allowed the company to grow from five
-            employees to a fast-growing company with contracts with several
-            high-profile organizations with large-scale security needs. You can
-            read more about my industry experience{' '}
+            While working at a startup as a fullstack engineer, I gained
+            valuable experience designing and working on several high-importance
+            projects spanning the frontend and backend that have allowed the
+            company to grow from five employees to a fast-growing company with
+            contracts with several high-profile organizations with large-scale
+            security needs. You can read more about my industry experience{' '}
             <a className="p-link" href="#experience">
               here
             </a>
@@ -32,9 +31,8 @@ const About = () => {
             expand my domain knowledge while maintaining and improving my skills
             in areas I already have experience in. To improve the clarity and
             efficiency of my code, I've read about best practices in books like{' '}
-            <i>Designing Data-Intensive Applications</i> and <i>Clean Code</i>.
-            You can learn all about what languages and frameworks I have
-            experience with{' '}
+            <i>Designing Data-Intensive Applications</i>. You can learn all
+            about what languages and frameworks I have experience with{' '}
             <a className="p-link" href="#skills">
               below
             </a>
@@ -42,9 +40,9 @@ const About = () => {
           </p>
           <p>
             I've excelled academically, but my proudest pursuits come outside of
-            the classroom. I have worked to become the Lead Developer of the
-            Software Engineering Club, where I lead a team of 20+ developers.
-            I've built quite a few projects, which you can find{' '}
+            the classroom. I worked to become the Lead Developer of the Software
+            Engineering Club, where I led a team of 20+ developers. I've built
+            quite a few projects, which you can find{' '}
             <a className="p-link" href="#projects">
               below.
             </a>
