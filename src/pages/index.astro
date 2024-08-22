@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import { FaGithub } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa6';
+import Section from '../components/Section.astro';
+import Skills from '../components/Skills.astro';
 ---
 
 <Layout title="Alex Rowe">
@@ -25,9 +27,8 @@ import { FaLinkedin } from 'react-icons/fa6';
       </div>
     </div>
     <h3>Hey there - I'm Alex, a full stack engineer.</h3>
-    <div class="section">
-      <h3>About Me</h3>
-    </div>
+    <Section title="About Me"><p>test</p></Section>
+    <Skills />
   </main>
 </Layout>
 
@@ -53,26 +54,6 @@ import { FaLinkedin } from 'react-icons/fa6';
     font-size: 20px;
     line-height: 1.6;
   }
-  p {
-    padding: 0rem;
-    margin: 0rem;
-    color: rgb(184, 183, 183);
-    font-size: medium;
-  }
-  h3 {
-    font-weight: 200;
-    padding: 0rem;
-    margin: 0rem;
-    color: rgb(184, 183, 183);
-    font-size: 20px;
-  }
-  h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    line-height: 1;
-    text-align: left;
-    margin-bottom: 0.1rem;
-  }
   nav ul {
     padding: 0.25rem 0.5rem;
     display: flex;
@@ -91,11 +72,5 @@ import { FaLinkedin } from 'react-icons/fa6';
   }
   .nav-item a:hover {
     color: white;
-  }
-  .section {
-    border: 1px solid red;
-    padding: 0.5rem 1rem;
-    margin-top: 2rem;
-    border-radius: 3px;
   }
 </style>

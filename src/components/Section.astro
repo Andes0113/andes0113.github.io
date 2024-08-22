@@ -1,0 +1,35 @@
+---
+interface SectionProps {
+  title: string;
+}
+const { title } = Astro.props;
+---
+
+<div class="section">
+  <button class="section-button">
+    <h3 class="section-title">{title}</h3>
+  </button>
+  <div class="section-content">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .section {
+    border: 1px solid red;
+    padding: 0.5rem 1rem;
+    margin-top: 2rem;
+    border-radius: 3px;
+  }
+  .section-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  .section-button:hover h3 {
+    color: whitesmoke;
+  }
+  .section-content {
+    display: none;
+  }
+</style>
