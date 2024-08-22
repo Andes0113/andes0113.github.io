@@ -9,6 +9,7 @@ import {
 } from 'react-icons/si';
 import { FaJava } from 'react-icons/fa';
 import type { IconType } from 'react-icons';
+import Section from './Section.astro';
 
 type skill = {
   name: string;
@@ -36,33 +37,23 @@ const groupedSkills = skills.reduce<Record<string, skill[]>>((acc, skill) => {
 //       Activate on hover
 ---
 
-<div class="skills">
-  <h3>Skills</h3>
-  <div class="skills-list">
-    {
-      Object.entries(groupedSkills).map(([type, skills]) => (
-        <div class="skill-type">
-          <h3>{type}</h3>
-          {skills.map((skill) => (
-            <div class="skill">
-              <skill.icon />
-              <span>{skill.name}</span>
-            </div>
-          ))}
-        </div>
-      ))
-    }
-  </div>
+<div class="skills-list">
+  {
+    Object.entries(groupedSkills).map(([type, skills]) => (
+      <div class="skill-type">
+        <h3>{type}</h3>
+        {skills.map((skill) => (
+          <div class="skill">
+            <skill.icon />
+            <span>{skill.name}</span>
+          </div>
+        ))}
+      </div>
+    ))
+  }
 </div>
 
 <style>
-  .skills {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    justify-content: end;
-    border: 1px solid red;
-  }
   .skills-list {
     width: 100%;
     display: flex;

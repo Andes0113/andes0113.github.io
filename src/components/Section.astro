@@ -3,16 +3,34 @@ interface SectionProps {
   title: string;
 }
 const { title } = Astro.props;
+const sectionTitle = title.split(' ').join('-');
 ---
 
 <div class="section">
-  <button class="section-button">
+  <button class="content-toggle section-button">
     <h3 class="section-title">{title}</h3>
   </button>
-  <div class="section-content">
+  <div id={`${sectionTitle}-content`} class="section-content">
     <slot />
   </div>
 </div>
+
+<script>
+  const buttons = document.querySelectorAll('.content-toggle');
+  buttons.forEach((b) =>
+    b.addEventListener('click', () =>
+      toggleSection(b.textContent!.trim().split(' ').join('-')),
+    ),
+  );
+
+  function toggleSection(sectionTitle: string) {
+    const sectionContent = document.querySelector(`#${sectionTitle}-content`);
+
+    if (sectionContent) {
+      sectionContent.classList.toggle('hidden');
+    }
+  }
+</script>
 
 <style>
   .section {
@@ -29,7 +47,7 @@ const { title } = Astro.props;
   .section-button:hover h3 {
     color: whitesmoke;
   }
-  .section-content {
+  .hidden {
     display: none;
   }
 </style>
