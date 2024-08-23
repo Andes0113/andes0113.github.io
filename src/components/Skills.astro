@@ -6,10 +6,14 @@ import {
   SiGo,
   SiDocker,
   SiPython,
+  SiKubernetes,
+  SiPostgresql,
+  SiNextdotjs,
+  SiApachecassandra,
 } from 'react-icons/si';
+import { DiRedis } from 'react-icons/di';
 import { FaJava } from 'react-icons/fa';
 import type { IconType } from 'react-icons';
-import Section from './Section.astro';
 
 type skill = {
   name: string;
@@ -18,13 +22,19 @@ type skill = {
 };
 
 const skills: skill[] = [
-  { name: 'TypeScript', icon: SiTypescript, type: 'Languages' },
   { name: 'Go', icon: SiGo, type: 'Languages' },
-  { name: 'Python', icon: SiPython, type: 'Languages' },
   { name: 'Java', icon: FaJava, type: 'Languages' },
+  { name: 'TypeScript', icon: SiTypescript, type: 'Languages' },
+  { name: 'Python', icon: SiPython, type: 'Languages' },
+  { name: 'C#', icon: FaJava, type: 'Languages' },
+  { name: 'Next.js', icon: SiNextdotjs, type: 'Frontend' },
   { name: 'React', icon: SiReact, type: 'Frontend' },
   { name: 'Astro', icon: SiAstro, type: 'Frontend' },
-  { name: 'Docker', icon: SiDocker, type: 'Tools' },
+  { name: 'Postgres', icon: SiPostgresql, type: 'Databases' },
+  { name: 'Redis', icon: DiRedis, type: 'Databases' },
+  { name: 'Cassandra', icon: SiApachecassandra, type: 'Databases' },
+  { name: 'Docker', icon: SiDocker, type: 'Deployment' },
+  { name: 'Kubernetes', icon: SiKubernetes, type: 'Deployment' },
 ];
 const groupedSkills = skills.reduce<Record<string, skill[]>>((acc, skill) => {
   acc[skill.type] = acc[skill.type] || [];
@@ -37,6 +47,7 @@ const groupedSkills = skills.reduce<Record<string, skill[]>>((acc, skill) => {
 //       Activate on hover
 ---
 
+<p class="skills-hint">Try clicking on a skill to see how I've used it!</p>
 <div class="skills-list">
   {
     Object.entries(groupedSkills).map(([type, skills]) => (
@@ -54,15 +65,19 @@ const groupedSkills = skills.reduce<Record<string, skill[]>>((acc, skill) => {
 </div>
 
 <style>
+  .skills-hint {
+    margin-bottom: 0;
+  }
   .skills-list {
     width: 100%;
     display: flex;
     gap: 2rem;
     align-items: start;
-    margin: 1rem 1.5rem;
+    /* border: 1px solid red; */
+    padding: 0.5rem 1rem;
   }
   .skill-type h3 {
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
   }
   .skill {
     display: flex;

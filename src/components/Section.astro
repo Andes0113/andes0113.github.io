@@ -17,11 +17,10 @@ const sectionTitle = title.split(' ').join('-');
 
 <script>
   const buttons = document.querySelectorAll('.content-toggle');
-  buttons.forEach((b) =>
-    b.addEventListener('click', () =>
-      toggleSection(b.textContent!.trim().split(' ').join('-')),
-    ),
-  );
+  buttons.forEach((b) => {
+    const sectionTitle = b.textContent!.trim().split(' ').join('-');
+    b.addEventListener('click', () => toggleSection(sectionTitle));
+  });
 
   function toggleSection(sectionTitle: string) {
     const sectionContent = document.querySelector(`#${sectionTitle}-content`);
@@ -39,13 +38,18 @@ const sectionTitle = title.split(' ').join('-');
     margin-top: 2rem;
     border-radius: 3px;
   }
+  .section:hover .section-button h3 {
+    color: whitesmoke;
+  }
+  .section-content {
+    margin: 1rem 1.5rem;
+  }
   .section-button {
     border: none;
     background: none;
     cursor: pointer;
-  }
-  .section-button:hover h3 {
-    color: whitesmoke;
+    width: 100%;
+    text-align: left;
   }
   .hidden {
     display: none;
