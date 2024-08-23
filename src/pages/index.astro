@@ -30,14 +30,19 @@ import Skills from '../components/Skills.astro';
       Hey there - I'm Alex, a backend engineer with skills across the full
       stack.
     </h3>
-    <Section title="About Me"><p>test</p></Section>
+    <div id="spacer"></div>
     <Section title="My Toolbox">
       <Skills />
     </Section>
+
+    <Section title="About Me"><p>test</p></Section>
   </main>
 </Layout>
 
 <style>
+  #spacer {
+    height: 100vh;
+  }
   .row {
     display: flex;
     align-items: center;

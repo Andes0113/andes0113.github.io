@@ -6,52 +6,58 @@ const { title } = Astro.props;
 const sectionTitle = title.split(' ').join('-');
 ---
 
+<h3 class="section-title">{title}</h3>
 <div class="section">
-  <button class="content-toggle section-button">
-    <h3 class="section-title">{title}</h3>
-  </button>
-  <div id={`${sectionTitle}-content`} class="section-content">
+  <div id={`${sectionTitle}-content`} class="section-content hidden">
     <slot />
   </div>
 </div>
 
 <script>
-  const buttons = document.querySelectorAll('.content-toggle');
-  buttons.forEach((b) => {
-    const sectionTitle = b.textContent!.trim().split(' ').join('-');
-    b.addEventListener('click', () => toggleSection(sectionTitle));
+  const headings = document.querySelectorAll('.section-title');
+  headings.forEach((h) => {
+    const sectionTitle = h.textContent!.trim().split(' ').join('-');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          toggleSection(sectionTitle);
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+    observer.observe(h);
   });
 
   function toggleSection(sectionTitle: string) {
     const sectionContent = document.querySelector(`#${sectionTitle}-content`);
 
     if (sectionContent) {
-      sectionContent.classList.toggle('hidden');
+      sectionContent.classList.remove('hidden');
     }
   }
 </script>
 
 <style>
   .section {
-    border: 1px solid red;
-    padding: 0.5rem 1rem;
     margin-top: 2rem;
-    border-radius: 3px;
   }
-  .section:hover .section-button h3 {
-    color: whitesmoke;
+  .section-title {
+    margin-top: 1rem;
   }
   .section-content {
+    border-radius: 3px;
+    padding: 0.5rem 1rem;
+    border: 1px solid red;
     margin: 1rem 1.5rem;
+    -webkit-transition: all 750ms ease-in;
+    -moz-transition: all 750ms ease-in;
+    -o-transition: all 750ms ease-in;
+    transition: all 750ms ease-in;
   }
-  .section-button {
-    border: none;
-    background: none;
-    cursor: pointer;
-    width: 100%;
-    text-align: left;
-  }
-  .hidden {
-    display: none;
+  .section-content.hidden {
+    margin-left: -30%;
+    margin-right: 30%;
+    overflow: hidden;
+    opacity: 0;
   }
 </style>
