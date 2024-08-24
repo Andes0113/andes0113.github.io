@@ -1,0 +1,107 @@
+---
+import {
+  SiTypescript,
+  SiReact,
+  SiAstro,
+  SiGo,
+  SiDocker,
+  SiPython,
+  SiKubernetes,
+  SiPostgresql,
+  SiNextdotjs,
+  SiApachecassandra,
+  SiCsharp,
+  SiTailwindcss,
+  SiMongodb,
+} from 'react-icons/si';
+import { DiRedis } from 'react-icons/di';
+import { FaJava } from 'react-icons/fa';
+import type { IconType } from 'react-icons';
+import Skill from './Skill.astro';
+
+type skill = {
+  name: string;
+  Icon: IconType;
+  type: string;
+  color: string;
+};
+
+const skills: skill[] = [
+  { name: 'Go', Icon: SiGo, type: 'Languages', color: '#53ACD4' },
+  {
+    name: 'TypeScript',
+    Icon: SiTypescript,
+    type: 'Languages',
+    color: '#3178C6',
+  },
+  { name: 'Java', Icon: FaJava, type: 'Languages', color: '#F7931A' },
+  { name: 'Python', Icon: SiPython, type: 'Languages', color: '#FFD43B' },
+  { name: 'C#', Icon: SiCsharp, type: 'Languages', color: '#9447FF' },
+  { name: 'Next.js', Icon: SiNextdotjs, type: 'Frontend', color: 'white' },
+  { name: 'React', Icon: SiReact, type: 'Frontend', color: '#61DAFB' },
+  { name: 'Astro', Icon: SiAstro, type: 'Frontend', color: 'white' },
+  { name: 'Tailwind', Icon: SiTailwindcss, type: 'Frontend', color: '#38BDF8' },
+  { name: 'Postgres', Icon: SiPostgresql, type: 'Databases', color: 'white' },
+  { name: 'Redis', Icon: DiRedis, type: 'Databases', color: '#c5302a' },
+  {
+    name: 'Cassandra',
+    Icon: SiApachecassandra,
+    type: 'Databases',
+    color: '#C6E6F9',
+  },
+  { name: 'MongoDB', Icon: SiMongodb, type: 'Databases', color: '#4DB33D' },
+  { name: 'Docker', Icon: SiDocker, type: 'Deployment', color: '#2496ED' },
+  {
+    name: 'Kubernetes',
+    Icon: SiKubernetes,
+    type: 'Deployment',
+    color: '#326CE5',
+  },
+];
+
+const groupedSkills = skills.reduce<Record<string, skill[]>>((acc, skill) => {
+  acc[skill.type] = acc[skill.type] || [];
+  acc[skill.type].push(skill);
+  return acc;
+}, {});
+
+// Get unique colors
+const colors = skills
+  .map((skill) => skill.color)
+  .filter((color, index, self) => self.indexOf(color) === index);
+
+// TODO: Add more skills
+// TODO: Add a div that slides out to show projects corresponding to each skill
+//       Activate on hover
+---
+
+<p class="skills-hint">Try clicking on a skill to see how I've used it!</p>
+<div class="skills-list">
+  {
+    Object.entries(groupedSkills).map(([type, skills]) => (
+      <div class="skill-type">
+        <h3>{type}</h3>
+        {skills.map((skill) => (
+          <Skill {...skill} />
+        ))}
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .skills-hint {
+    margin-bottom: 0;
+  }
+  .skills-list {
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+    align-items: start;
+    padding: 0.5rem 1rem;
+  }
+  .skill-type h3 {
+    margin-bottom: 0.75rem;
+    color: whitesmoke;
+  }
+</style>

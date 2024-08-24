@@ -1,0 +1,47 @@
+---
+import type { IconType } from 'react-icons';
+
+interface Props {
+  name: string;
+  color: string;
+  Icon: IconType;
+}
+
+const { name, Icon, color } = Astro.props;
+---
+
+<div class="skill text-red">
+  <Icon />
+  <span>{name}</span>
+</div>
+
+<style define:vars={{ color }}>
+  .skill {
+    color: white;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    cursor: pointer;
+  }
+  .skill svg {
+    transition: all 0.4s ease;
+  }
+  .skill:hover svg {
+    color: var(--color);
+  }
+  .skill span {
+    padding-left: 0.5rem;
+    width: 100%;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+    background-color: #13151a;
+  }
+  .skill:hover span {
+    background-color: var(--color);
+    transition: all 0.4s ease;
+    background-image: linear-gradient(to right, var(--color), #13151a);
+    background-clip: padding-box;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+  }
+</style>
