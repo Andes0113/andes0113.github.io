@@ -24,21 +24,27 @@ const { name, Icon, color } = Astro.props;
     cursor: pointer;
   }
   .skill svg {
+    position: absolute;
     transition: all 0.4s ease;
   }
   .skill:hover svg {
     color: var(--color);
+    transform: scale(1.2);
   }
   .skill span {
+    margin-left: 1.5rem;
     padding-left: 0.5rem;
-    width: 100%;
+    padding-right: 0.5rem;
     border-top-left-radius: 0.25rem;
     border-bottom-left-radius: 0.25rem;
     background-color: #13151a;
+    width: 10%;
   }
   .skill:hover span {
+    margin-left: 2rem;
+    width: 100%;
     background-color: var(--color);
-    transition: all 0.4s ease;
+    transition: all 700ms ease;
     background-image: linear-gradient(to right, var(--color), #13151a);
     background-clip: padding-box;
     border-top-left-radius: 0.5rem;

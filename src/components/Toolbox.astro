@@ -41,7 +41,7 @@ const skills: skill[] = [
   { name: 'React', Icon: SiReact, type: 'Frontend', color: '#61DAFB' },
   { name: 'Astro', Icon: SiAstro, type: 'Frontend', color: 'white' },
   { name: 'Tailwind', Icon: SiTailwindcss, type: 'Frontend', color: '#38BDF8' },
-  { name: 'Postgres', Icon: SiPostgresql, type: 'Databases', color: 'white' },
+  { name: 'Postgres', Icon: SiPostgresql, type: 'Databases', color: '#336791' },
   { name: 'Redis', Icon: DiRedis, type: 'Databases', color: '#c5302a' },
   {
     name: 'Cassandra',
@@ -78,7 +78,7 @@ const colors = skills
 <p class="skills-hint">Try clicking on a skill to see how I've used it!</p>
 <div class="skills-list">
   {
-    Object.entries(groupedSkills).map(([type, skills]) => (
+    Object.entries(groupedSkills).map(([type, skills]: [string, skill[]]) => (
       <div class="skill-type">
         <h3>{type}</h3>
         {skills.map((skill) => (
@@ -95,7 +95,8 @@ const colors = skills
   }
   .skills-list {
     width: 100%;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     gap: 2rem;
     align-items: start;
     padding: 0.5rem 1rem;
