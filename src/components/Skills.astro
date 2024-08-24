@@ -20,23 +20,30 @@ type skill = {
   name: string;
   icon: IconType;
   type: string;
+  color: string;
 };
 
 const skills: skill[] = [
-  { name: 'Go', icon: SiGo, type: 'Languages' },
-  { name: 'TypeScript', icon: SiTypescript, type: 'Languages' },
-  { name: 'Java', icon: FaJava, type: 'Languages' },
-  { name: 'Python', icon: SiPython, type: 'Languages' },
-  { name: 'C#', icon: SiCsharp, type: 'Languages' },
-  { name: 'Next.js', icon: SiNextdotjs, type: 'Frontend' },
-  { name: 'React', icon: SiReact, type: 'Frontend' },
-  { name: 'Astro', icon: SiAstro, type: 'Frontend' },
-  { name: 'Postgres', icon: SiPostgresql, type: 'Databases' },
-  { name: 'Redis', icon: DiRedis, type: 'Databases' },
-  { name: 'Cassandra', icon: SiApachecassandra, type: 'Databases' },
-  { name: 'Docker', icon: SiDocker, type: 'Deployment' },
-  { name: 'Kubernetes', icon: SiKubernetes, type: 'Deployment' },
+  { name: 'Go', icon: SiGo, type: 'Languages', color: 'green' },
+  { name: 'TypeScript', icon: SiTypescript, type: 'Languages', color: 'blue' },
+  { name: 'Java', icon: FaJava, type: 'Languages', color: 'red' },
+  { name: 'Python', icon: SiPython, type: 'Languages', color: 'yellow' },
+  { name: 'C#', icon: SiCsharp, type: 'Languages', color: 'purple' },
+  { name: 'Next.js', icon: SiNextdotjs, type: 'Frontend', color: 'blue' },
+  { name: 'React', icon: SiReact, type: 'Frontend', color: 'blue' },
+  { name: 'Astro', icon: SiAstro, type: 'Frontend', color: 'blue' },
+  { name: 'Postgres', icon: SiPostgresql, type: 'Databases', color: 'blue' },
+  { name: 'Redis', icon: DiRedis, type: 'Databases', color: 'red' },
+  {
+    name: 'Cassandra',
+    icon: SiApachecassandra,
+    type: 'Databases',
+    color: 'red',
+  },
+  { name: 'Docker', icon: SiDocker, type: 'Deployment', color: 'blue' },
+  { name: 'Kubernetes', icon: SiKubernetes, type: 'Deployment', color: 'blue' },
 ];
+
 const groupedSkills = skills.reduce<Record<string, skill[]>>((acc, skill) => {
   acc[skill.type] = acc[skill.type] || [];
   acc[skill.type].push(skill);
@@ -74,7 +81,6 @@ const groupedSkills = skills.reduce<Record<string, skill[]>>((acc, skill) => {
     display: flex;
     gap: 2rem;
     align-items: start;
-    /* border: 1px solid red; */
     padding: 0.5rem 1rem;
   }
   .skill-type h3 {
