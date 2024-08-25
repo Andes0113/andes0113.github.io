@@ -13,11 +13,15 @@ import {
   SiCsharp,
   SiTailwindcss,
   SiMongodb,
+  SiPytorch,
+  SiSpringboot,
+  SiDotnet,
 } from 'react-icons/si';
 import { DiRedis } from 'react-icons/di';
 import { FaJava } from 'react-icons/fa';
 import type { IconType } from 'react-icons';
 import Skill from './Skill.astro';
+import { FaAws } from 'react-icons/fa6';
 
 type skill = {
   name: string;
@@ -37,10 +41,15 @@ const skills: skill[] = [
   { name: 'Java', Icon: FaJava, type: 'Languages', color: '#F7931A' },
   { name: 'Python', Icon: SiPython, type: 'Languages', color: '#FFD43B' },
   { name: 'C#', Icon: SiCsharp, type: 'Languages', color: '#9447FF' },
-  { name: 'Next.js', Icon: SiNextdotjs, type: 'Frontend', color: 'white' },
-  { name: 'React', Icon: SiReact, type: 'Frontend', color: '#61DAFB' },
-  { name: 'Astro', Icon: SiAstro, type: 'Frontend', color: 'white' },
-  { name: 'Tailwind', Icon: SiTailwindcss, type: 'Frontend', color: '#38BDF8' },
+  { name: 'Next.js', Icon: SiNextdotjs, type: 'Frameworks', color: '#B8B7B7' },
+  {
+    name: 'Spring Boot',
+    Icon: SiSpringboot,
+    type: 'Frameworks',
+    color: '#6DB33D',
+  },
+  { name: 'PyTorch', Icon: SiPytorch, type: 'Frameworks', color: '#FF4F00' },
+  { name: '.NET', Icon: SiDotnet, type: 'Frameworks', color: '#512BD4' },
   { name: 'Postgres', Icon: SiPostgresql, type: 'Databases', color: '#336791' },
   { name: 'Redis', Icon: DiRedis, type: 'Databases', color: '#c5302a' },
   {
@@ -50,6 +59,10 @@ const skills: skill[] = [
     color: '#C6E6F9',
   },
   { name: 'MongoDB', Icon: SiMongodb, type: 'Databases', color: '#4DB33D' },
+  { name: 'React', Icon: SiReact, type: 'Frontend', color: '#61DAFB' },
+  { name: 'Tailwind', Icon: SiTailwindcss, type: 'Frontend', color: '#38BDF8' },
+  { name: 'Astro', Icon: SiAstro, type: 'Frontend', color: '#f35e14' },
+  { name: 'AWS', Icon: FaAws, type: 'Deployment', color: '#FF9900' },
   { name: 'Docker', Icon: SiDocker, type: 'Deployment', color: '#2496ED' },
   {
     name: 'Kubernetes',
@@ -75,7 +88,6 @@ const colors = skills
 //       Activate on hover
 ---
 
-<p class="skills-hint">Try clicking on a skill to see how I've used it!</p>
 <div class="skills-list">
   {
     Object.entries(groupedSkills).map(([type, skills]: [string, skill[]]) => (
@@ -90,16 +102,13 @@ const colors = skills
 </div>
 
 <style>
-  .skills-hint {
-    margin-bottom: 0;
-  }
   .skills-list {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 2rem;
     align-items: start;
-    padding: 0.5rem 1rem;
+    padding: 0.25rem 1rem;
   }
   .skill-type h3 {
     margin-bottom: 0.75rem;
