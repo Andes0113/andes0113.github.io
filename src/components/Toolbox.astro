@@ -14,14 +14,14 @@ import {
   SiTailwindcss,
   SiMongodb,
   SiPytorch,
-  SiSpringboot,
+  SiSpring,
   SiDotnet,
 } from 'react-icons/si';
 import { DiRedis } from 'react-icons/di';
 import { FaJava } from 'react-icons/fa';
+import { FaAws } from 'react-icons/fa6';
 import type { IconType } from 'react-icons';
 import Skill from './Skill.astro';
-import { FaAws } from 'react-icons/fa6';
 
 type skill = {
   name: string;
@@ -43,8 +43,8 @@ const skills: skill[] = [
   { name: 'C#', Icon: SiCsharp, type: 'Languages', color: '#9447FF' },
   { name: 'Next.js', Icon: SiNextdotjs, type: 'Frameworks', color: '#B8B7B7' },
   {
-    name: 'Spring Boot',
-    Icon: SiSpringboot,
+    name: 'Spring',
+    Icon: SiSpring,
     type: 'Frameworks',
     color: '#6DB33D',
   },
@@ -77,15 +77,6 @@ const groupedSkills = skills.reduce<Record<string, skill[]>>((acc, skill) => {
   acc[skill.type].push(skill);
   return acc;
 }, {});
-
-// Get unique colors
-const colors = skills
-  .map((skill) => skill.color)
-  .filter((color, index, self) => self.indexOf(color) === index);
-
-// TODO: Add more skills
-// TODO: Add a div that slides out to show projects corresponding to each skill
-//       Activate on hover
 ---
 
 <div class="skills-list">

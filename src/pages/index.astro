@@ -4,13 +4,15 @@ import { FaGithub } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa6';
 import Section from '../components/Section.astro';
 import Toolbox from '../components/Toolbox.astro';
+import Projects from '../components/Projects';
+import '@/styles/globals.css';
 ---
 
 <Layout title="Alex Rowe">
   <nav>
     <ul id="navbar">
-      <li class="nav-item"><a href="#projects">Projects</a></li>
-      <li class="nav-item"><a href="#experience">Experience</a></li>
+      <li class="nav-item"><a href="#Projects">Projects</a></li>
+      <li class="nav-item"><a href="#Experience">Experience</a></li>
     </ul>
   </nav>
 
@@ -39,15 +41,18 @@ import Toolbox from '../components/Toolbox.astro';
       stack.
     </h2>
     <div id="spacer"></div>
-    <Section title="My Toolbox">
+    <Section title="About Me" fromRight><p>test</p></Section>
+    <Section title="My Toolbox" fromBottom>
       <Toolbox />
     </Section>
-
-    <Section title="About Me" fromRight><p>test</p></Section>
+    <Section title="Projects" fromLeft><Projects client:load /></Section>
   </main>
 </Layout>
 
 <style>
+  h1 {
+    font-size: 3rem;
+  }
   #spacer {
     height: 100vh;
   }

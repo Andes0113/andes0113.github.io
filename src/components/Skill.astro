@@ -10,7 +10,7 @@ interface Props {
 const { name, Icon, color } = Astro.props;
 ---
 
-<div class="skill text-red">
+<div class="skill">
   <Icon />
   <span>{name}</span>
 </div>
@@ -42,7 +42,6 @@ const { name, Icon, color } = Astro.props;
     width: 0;
   }
   .skill:hover span {
-    /* padding-left: 1rem; */
     transition: all 700ms ease;
     background-image: linear-gradient(to right, var(--color), #13151a);
     margin-left: 2rem;

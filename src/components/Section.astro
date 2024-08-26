@@ -1,21 +1,25 @@
 ---
-import { classnames } from '../common/utils';
+import { cn } from '../common/utils';
 interface SectionProps {
   title: string;
   fromRight?: boolean;
+  fromBottom?: boolean;
 }
-const { title, fromRight } = Astro.props;
+const { title, fromRight, fromBottom } = Astro.props;
 const sectionTitle = title.split(' ').join('-');
+
+const direction = fromBottom
+  ? 'from-bottom'
+  : fromRight
+    ? 'from-right'
+    : 'from-left';
 ---
 
 <h3 class="section-title">{title}</h3>
-<div class="section">
+<div id={sectionTitle} class="section">
   <div
     id={`${sectionTitle}-content`}
-    class={classnames(
-      'section-content hidden',
-      fromRight ? 'from-right' : 'from-left',
-    )}
+    class={cn('section-content hidden', direction)}
   >
     <slot />
   </div>
@@ -41,7 +45,7 @@ const sectionTitle = title.split(' ').join('-');
 
     if (sectionContent) {
       sectionContent.classList.remove('hidden');
-      sectionContent.classList.remove('from-right', 'from-left');
+      sectionContent.classList.remove('from-right', 'from-left', 'from-bottom');
     }
   }
 </script>
@@ -49,6 +53,7 @@ const sectionTitle = title.split(' ').join('-');
 <style>
   .section {
     margin-top: 2rem;
+    overflow: hidden;
   }
   .section-title {
     margin-top: 1rem;
@@ -67,11 +72,15 @@ const sectionTitle = title.split(' ').join('-');
     opacity: 0;
   }
   .section-content.from-right {
-    margin-left: 30%;
-    margin-right: -30%;
+    margin-left: 20%;
+    margin-right: -20%;
   }
   .section-content.from-left {
-    margin-left: -30%;
-    margin-right: 30%;
+    margin-left: -20%;
+    margin-right: 20%;
+  }
+  .section-content.from-bottom {
+    margin-top: 20%;
+    margin-bottom: -20%;
   }
 </style>
