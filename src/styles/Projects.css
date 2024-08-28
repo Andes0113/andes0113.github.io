@@ -3,6 +3,32 @@
   border-radius: 5px;
   padding: 10px;
   margin: 10px;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  border: 1px solid #fff;
+  background-color: rgba(150, 150, 150, 0.1);
+}
+
+.project-card h3 span {
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+}
+
+.project-card:hover h3 > span {
+  animation: MoveUpDown 0.5s ease;
+  text-shadow: 0 0 10px rgba(71, 168, 247, 0.8);
+}
+
+@keyframes MoveUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 .projects {

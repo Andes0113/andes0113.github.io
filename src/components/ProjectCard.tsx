@@ -1,4 +1,4 @@
-import type { Dispatch, SetStateAction } from 'react';
+import { useEffect } from 'react';
 import {
   Dialog,
   DialogTrigger,
@@ -14,31 +14,37 @@ import { Button } from './ui/button';
 
 interface CardProps {
   title: string;
-  body: string;
-  onHeaderClick: Dispatch<SetStateAction<string | null>>;
+  description: string;
 }
 
-export default function ProjectCard({ onHeaderClick, title, body }: CardProps) {
+export default function ProjectCard({ title, description }: CardProps) {
+  useEffect(() => {
+    const titleElement = document.querySelector('.project-card h3');
+    if (titleElement) {
+      const children = titleElement.children;
+      for (let i = 0; i < children.length; i++) {
+        const child = children[i] as HTMLElement;
+        child.style.animationDelay = `${i * 0.05}s`;
+      }
+    }
+  }, []);
   return (
     <Dialog>
       <DialogTrigger asChild>
         <div className="project-card">
-          <button onClick={() => onHeaderClick(title)}>
-            <h3>
-              {title}
-              <span>&rarr;</span>
-            </h3>
-          </button>
-
-          <p>{body}</p>
+          <h3>
+            {title.split('').map((char, index) => (
+              <span key={index}>{char === ' ' ? '\u00A0' : char}</span>
+            ))}
+          </h3>
+          <span></span>
+          <p>{description}</p>
         </div>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="sm:max-w-lg md:max-w-xl lg:max-w-3xl">
         <DialogHeader>
-          <DialogTitle>Edit profile</DialogTitle>
-          <DialogDescription>
-            Make changes to your profile here. Click save when you're done.
-          </DialogDescription>
+          <DialogTitle>{title}</DialogTitle>
+          <DialogDescription>{description}</DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">
           <div className="grid grid-cols-4 items-center gap-4">
