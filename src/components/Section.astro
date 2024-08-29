@@ -5,21 +5,23 @@ interface SectionProps {
   fromRight?: boolean;
   fromBottom?: boolean;
 }
-const { title, fromRight, fromBottom } = Astro.props;
+const { title, still, fromRight, fromBottom } = Astro.props;
 const sectionTitle = title.split(' ').join('-');
 
-const direction = fromBottom
-  ? 'from-bottom'
-  : fromRight
-    ? 'from-right'
-    : 'from-left';
+const direction = still
+  ? ''
+  : fromBottom
+    ? 'from-bottom'
+    : fromRight
+      ? 'from-right'
+      : 'from-left';
 ---
 
 <h3 class="section-title">{title}</h3>
 <div id={sectionTitle} class="section">
   <div
     id={`${sectionTitle}-content`}
-    class={cn('section-content hidden', direction)}
+    class={cn('section-content', direction === '' ? '' : `hidden ${direction}`)}
   >
     <slot />
   </div>
@@ -52,16 +54,14 @@ const direction = fromBottom
 
 <style>
   .section {
-    margin-top: 2rem;
     overflow: hidden;
   }
   .section-title {
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
   .section-content {
     border-radius: 3px;
-    padding: 0.5rem 1rem;
-    margin: 1rem 1.5rem;
+    padding: 1rem;
     -webkit-transition: all 1s ease-in;
     -moz-transition: all 1s ease-in;
     -o-transition: all 1s ease-in;
