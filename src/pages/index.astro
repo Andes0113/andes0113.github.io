@@ -4,9 +4,9 @@ import { FaGithub } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa6';
 import Section from '../components/Section.astro';
 import Toolbox from '../components/Toolbox.astro';
-import Projects from '../components/Projects';
+import Projects from '../components/sections/Projects';
 import '@/styles/globals.css';
-import Experience from '@/components/Experience.astro';
+import Experience from '@/components/sections/Experience.astro';
 ---
 
 <Layout title="Alex Rowe">
@@ -42,7 +42,7 @@ import Experience from '@/components/Experience.astro';
       stack.
     </h2>
     <div id="spacer"></div>
-    <Section title="About Me" fromRight><p>test</p></Section>
+    <Section title="About Me" still><p>test</p></Section>
     <Section title="My Toolbox" fromBottom>
       <Toolbox />
     </Section>

@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import '../styles/Projects.css';
-import ProjectCard from './ProjectCard';
+import '@/styles/Projects.css';
+import ProjectCard from '../sections/ProjectCard';
 
 export default function Projects() {
   return (
