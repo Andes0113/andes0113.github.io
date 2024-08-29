@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import { FaGithub } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa6';
 import Section from '../components/Section.astro';
-import Toolbox from '../components/Toolbox.astro';
+import Toolbox from '../components/sections/Toolbox.astro';
 import Projects from '../components/sections/Projects';
 import '@/styles/globals.css';
 import Experience from '@/components/sections/Experience.astro';
@@ -46,7 +46,7 @@ import Experience from '@/components/sections/Experience.astro';
     <Section title="My Toolbox" fromBottom>
       <Toolbox />
     </Section>
-    <Section title="Experience" fromLeft><Experience /></Section>
+    <Section title="Experience" fromRight><Experience /></Section>
     <Section title="Projects" fromLeft><Projects client:load /></Section>
   </main>
 </Layout>
