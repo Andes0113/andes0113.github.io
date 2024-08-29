@@ -1,0 +1,18 @@
+---
+import ExperienceItem from './ExperienceItem.astro';
+import type { ExperienceItemProps } from './ExperienceItem.astro';
+
+const experiences: ExperienceItemProps[] = [
+  {
+    title: 'Software Engineer',
+    company: 'Company Name',
+    date: 'January 2022 - Present',
+    description: 'Description of the job',
+    techStack: ['Go', 'Postgres', 'Redis', 'C#', '.NET'],
+  },
+];
+---
+
+<div class="experience-container">
+  {experiences.map((experience) => <ExperienceItem {...experience} />)}
+</div>
