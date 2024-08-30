@@ -6,13 +6,22 @@ import Skill from './Skill.astro';
 export interface ExperienceItemProps {
   title: string;
   company: string;
+  companyDescription: string;
+  concentration: string;
   date: string;
-  description: string;
+  description: string[];
   techStack: string[];
 }
 
-const { title, company, date, description, techStack } =
-  Astro.props as ExperienceItemProps;
+const {
+  title,
+  company,
+  companyDescription,
+  concentration,
+  date,
+  description,
+  techStack,
+} = Astro.props as ExperienceItemProps;
 
 const skillList: SkillType[] = techStack
   .map((skill) => skills.find((s) => s.name === skill))
@@ -23,19 +32,39 @@ const skillList: SkillType[] = techStack
   <div class="experience-item-header">
     <div>
       <p>{company}</p>
-      <h3 class="title">{title}</h3>
+      <h3 class="title">
+        {title}
+        <span class="concentration">{`(${concentration})`}</span>
+      </h3>
     </div>
     <p>{date}</p>
   </div>
-  <div class="experience-item-content">
-    <div>
-      {skillList.map((skill) => <Skill {...skill} />)}
+  <div class="experience-item-content-container">
+    <p>{companyDescription}</p>
+    <div class="experience-item-content">
+      <div>
+        {skillList.map((skill) => <Skill {...skill} />)}
+      </div>
+      <div class="experience-item-description">
+        {description.map((item) => <p>{item}</p>)}
+      </div>
     </div>
-    <p>{description}</p>
   </div>
 </div>
 
 <style>
+  .concentration {
+    color: rgb(126, 119, 119);
+    font-size: 1rem;
+  }
+  .experience-item-description {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .experience-item-description p {
+    color: whitesmoke;
+  }
   .title {
     color: whitesmoke;
   }
@@ -45,19 +74,28 @@ const skillList: SkillType[] = techStack
     gap: 0.5rem;
   }
   .experience-item-header {
-    align-items: center;
+    align-items: flex-end;
     display: flex;
     justify-content: space-between;
   }
-  .experience-item-content {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+  .experience-item-content-container {
+    margin: 0.5rem;
     padding: 1rem;
     border: 1px solid rgb(126, 119, 119);
     border-radius: 0.5rem;
+    flex-direction: column;
+    display: flex;
+    gap: 0.5rem;
+  }
+  .experience-item-content-container > p {
+    font-size: 1rem;
+  }
+  .experience-item-content {
     display: grid;
     grid-template-columns: 1fr 4fr;
     gap: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgb(126, 119, 119);
   }
   .experience-item-content > * {
     width: 100%;

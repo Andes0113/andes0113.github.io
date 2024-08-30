@@ -6,9 +6,52 @@ const experiences: ExperienceItemProps[] = [
   {
     title: 'Software Engineer Intern',
     company: 'Wizards of the Coast',
-    date: 'June - August 2024',
-    description: 'Description of the job',
-    techStack: ['Go', 'Postgres', 'Redis', 'Kubernetes', 'C#', '.NET'],
+    companyDescription:
+      'Wizards of the Coast is a game company that publishes games like Magic: The Gathering and \
+    Dungeons & Dragons. I worked in the Online Game Services team, which is responsible for the \
+    backend services that power their digital games.',
+    concentration: 'Backend',
+    date: 'June 2024 - August 2024',
+    description: [
+      'As an intern, I worked with both a team responsible for microservices using Go and Kubernetes \
+      and a team of interns on an intern project using C# and .NET.',
+      'I worked with a microservices team using Go and Kubernetes, developing gRPC-based endpoints, \
+      finding and fixing bugs, and using databases like Postgres and Redis in a distributed environment.',
+      'My intern project involved using C# and .NET to create a testing platform for \
+      transaction integration with Steam, overcoming scope creep and tight deadlines.',
+      'Despite dealing with scope creep and a tight deadline, we delivered a successful MVP \
+      that now serves as a reference tool for game developers and a testing resource for backend \
+      developers within the company.',
+    ],
+    techStack: ['Go', 'AWS', 'Postgres', 'Redis', 'Kubernetes', 'C#', '.NET'],
+  },
+  {
+    title: 'Software Engineer',
+    company: 'MIDL Intelligence',
+    companyDescription:
+      'MIDL Intelligence is a startup that provides artificial intelligence solutions for security systems, \
+      using computer vision and machine learning to detect, identify, and track objects and events.',
+    concentration: 'Full Stack',
+    date: 'August 2022 - December 2023',
+    description: [
+      'I started at MIDL as an intern, and in a short time my technical skills skyrocketed.',
+      'I worked part-time during the school year and full-time during the summer. \
+      Working consistently with MIDL allowed me to gain a lot of experience in a short time, \
+      and I quickly grew into a more senior role.',
+      'I worked primarily as a full stack developer using Next.js, but as I gained confidence and ability I began to wear more hats. \
+      I gained experience with system design, machine learning, and high-load backend services with real-time data.',
+      'I led important projects, working to build vital features on tight deadlines that spanned complex frontend and backend systems.',
+    ],
+    techStack: [
+      'TypeScript',
+      'Next.js',
+      'AWS',
+      'React',
+      'MongoDB',
+      'Postgres',
+      'Tailwind',
+      'Go',
+    ],
   },
 ];
 ---
@@ -16,3 +59,11 @@ const experiences: ExperienceItemProps[] = [
 <div class="experience-container">
   {experiences.map((experience) => <ExperienceItem {...experience} />)}
 </div>
+
+<style>
+  .experience-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+</style>
