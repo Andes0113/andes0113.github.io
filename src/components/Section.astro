@@ -2,20 +2,21 @@
 import { cn } from '../common/utils';
 interface SectionProps {
   title: string;
-  still?: boolean;
+  fromLeft?: boolean;
   fromRight?: boolean;
   fromBottom?: boolean;
 }
-const { title, still, fromRight, fromBottom } = Astro.props as SectionProps;
+const { title, fromLeft, fromRight, fromBottom } = Astro.props as SectionProps;
 const sectionTitle = title.split(' ').join('-');
 
-const direction = still
-  ? ''
-  : fromBottom
-    ? 'from-bottom'
-    : fromRight
-      ? 'from-right'
-      : 'from-left';
+let direction = '';
+if (fromRight) {
+  direction = 'from-right';
+} else if (fromBottom) {
+  direction = 'from-bottom';
+} else if (fromLeft) {
+  direction = 'from-left';
+}
 ---
 
 <div class="section-container">

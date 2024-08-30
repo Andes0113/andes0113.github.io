@@ -7,6 +7,7 @@ import Toolbox from '../components/sections/Toolbox.astro';
 import Projects from '../components/sections/Projects';
 import '@/styles/globals.css';
 import Experience from '@/components/sections/Experience.astro';
+import AboutMe from '@/components/sections/AboutMe.astro';
 ---
 
 <Layout title="Alex Rowe">
@@ -42,12 +43,12 @@ import Experience from '@/components/sections/Experience.astro';
       stack.
     </h2>
     <div id="spacer"></div>
-    <Section title="About Me" still><p>test</p></Section>
-    <Section title="My Toolbox" fromBottom>
+    <Section title="About Me"><AboutMe /></Section>
+    <Section title="My Toolbox">
       <Toolbox />
     </Section>
-    <Section title="Experience" fromRight><Experience /></Section>
-    <Section title="Projects" fromLeft><Projects client:load /></Section>
+    <Section title="Experience"><Experience /></Section>
+    <Section title="Projects" fromBottom><Projects client:load /></Section>
   </main>
 </Layout>
 
@@ -56,7 +57,7 @@ import Experience from '@/components/sections/Experience.astro';
     font-size: 3rem;
   }
   #spacer {
-    height: 100vh;
+    margin-top: 3rem;
   }
   .row {
     display: flex;
