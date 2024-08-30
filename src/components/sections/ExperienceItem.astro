@@ -55,6 +55,7 @@ const companyId = company.split(' ').join('-');
   </div>
   <div class="experience-item-content-container">
     <p>{companyDescription}</p>
+    <div class="intersection-anchor"></div>
     <div class="experience-item-content">
       <div>
         {skillList.map((skill) => <Skill {...skill} />)}
@@ -73,6 +74,10 @@ const companyId = company.split(' ').join('-');
       .textContent!.trim()
       .split(' ')
       .join('-');
+
+    const intersectionAnchor = item.querySelector('.intersection-anchor');
+    if (!intersectionAnchor) return;
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -81,7 +86,7 @@ const companyId = company.split(' ').join('-');
         }
       });
     });
-    observer.observe(item);
+    observer.observe(intersectionAnchor);
   });
 
   function toggleItem(companyId: string) {
@@ -123,6 +128,7 @@ const companyId = company.split(' ').join('-');
     flex-direction: column;
     gap: 0.5rem;
     transition: all 1.5s ease;
+    /* transition-delay: 0.25s; */
   }
   .experience-item-header {
     align-items: flex-end;
