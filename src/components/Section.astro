@@ -2,10 +2,11 @@
 import { cn } from '../common/utils';
 interface SectionProps {
   title: string;
+  still?: boolean;
   fromRight?: boolean;
   fromBottom?: boolean;
 }
-const { title, still, fromRight, fromBottom } = Astro.props;
+const { title, still, fromRight, fromBottom } = Astro.props as SectionProps;
 const sectionTitle = title.split(' ').join('-');
 
 const direction = still
@@ -17,20 +18,28 @@ const direction = still
       : 'from-left';
 ---
 
-<h3 class="section-title">{title}</h3>
-<div id={sectionTitle} class="section">
-  <div
-    id={`${sectionTitle}-content`}
-    class={cn('section-content', direction === '' ? '' : `hidden ${direction}`)}
-  >
-    <slot />
+<div class="section-container">
+  <h3 class="section-title">{title}</h3>
+  <div id={sectionTitle} class="section">
+    <div
+      id={`${sectionTitle}-content`}
+      class={cn(
+        'section-content',
+        direction === '' ? '' : `hidden ${direction}`
+      )}
+    >
+      <slot />
+    </div>
   </div>
 </div>
 
 <script>
-  const headings = document.querySelectorAll('.section-title');
-  headings.forEach((h) => {
-    const sectionTitle = h.textContent!.trim().split(' ').join('-');
+  const sections = document.querySelectorAll('.section-container');
+  sections.forEach((section) => {
+    const sectionTitle = section.children[0]
+      .textContent!.trim()
+      .split(' ')
+      .join('-');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -39,7 +48,7 @@ const direction = still
         }
       });
     });
-    observer.observe(h);
+    observer.observe(section);
   });
 
   function toggleSection(sectionTitle: string) {
