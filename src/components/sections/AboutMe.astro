@@ -1,7 +1,70 @@
-<p id="about-me">test</p>
+---
+import horseback from '@/assets/horseback.webp';
+import CaptionedImage from './CaptionedImage.astro';
+---
+
+<div id="about-me">
+  <div id="horseback" class="bubbles">
+    <CaptionedImage
+      src={horseback}
+      alt="A very cool guy sitting on a horse statue"
+      caption="Me (valiantly) always looking for new opportunities"
+    />
+  </div>
+  <p id="about-me-text">
+    I'm a software engineer with a passion for building products that make a
+    difference. <a href="#Projects">projects</a> I'm a full stack developer with
+    a passion for building products that make a difference. I'm a full stack developer
+    with a passion for building products that make a difference.
+  </p>
+</div>
 
 <style>
+  a {
+    background-color: #0077b5;
+    color: #f5f5f5;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+  }
+  a:hover {
+    opacity: 0.9;
+  }
   #about-me {
     height: 80vh;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 1rem;
+  }
+  #about-me-text {
+    grid-row: 1 / 1;
+    grid-column: 1 / 4;
+    /* grid-column: 1 / 2; */
+  }
+  #horseback {
+    grid-row: 1 / 2;
+    grid-column: 4 / 6;
+  }
+
+  .bubbles {
+    border-radius: 1rem;
+    animation: bubble 1.5s ease-in-out 1;
+  }
+  @keyframes bubble {
+    0% {
+      transform: scale(0.85);
+    }
+    40%,
+    50% {
+      transform: scale(1.05);
+      rotate: -5deg;
+    }
+    80% {
+      transform: scale(1.05);
+      rotate: -2deg;
+    }
+    100% {
+      transform: scale(1);
+    }
   }
 </style>
