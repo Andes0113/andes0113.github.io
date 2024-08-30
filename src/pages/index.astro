@@ -11,13 +11,6 @@ import AboutMe from '@/components/sections/AboutMe.astro';
 ---
 
 <Layout title="Alex Rowe">
-  <nav>
-    <ul id="navbar">
-      <li class="nav-item"><a href="#Projects">Projects</a></li>
-      <li class="nav-item"><a href="#Experience">Experience</a></li>
-    </ul>
-  </nav>
-
   <main>
     <div id="signature">
       <h1>Alex Rowe</h1>
@@ -42,7 +35,6 @@ import AboutMe from '@/components/sections/AboutMe.astro';
       Hey there - I'm Alex, a backend engineer with skills across the full
       stack.
     </h2>
-    <div id="spacer"></div>
     <Section title="About Me"><AboutMe /></Section>
     <Section title="My Toolbox">
       <Toolbox />
@@ -56,15 +48,14 @@ import AboutMe from '@/components/sections/AboutMe.astro';
   h1 {
     font-size: 3rem;
   }
-  #spacer {
-    margin-top: 3rem;
-  }
   .row {
     display: flex;
     align-items: center;
     gap: 0.5rem;
   }
   #signature {
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: start;
