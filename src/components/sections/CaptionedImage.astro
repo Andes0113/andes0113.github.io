@@ -4,7 +4,7 @@ const { src, alt, caption } = Astro.props;
 ---
 
 <div>
-  <Image class="image" src={src} alt={alt} />
+  <Image class="image" src={src} alt={alt} loading="lazy" />
   <p>{caption}</p>
 </div>
 
