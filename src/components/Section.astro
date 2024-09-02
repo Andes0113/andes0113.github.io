@@ -1,5 +1,5 @@
 ---
-import { cn } from '../common/utils';
+import { classNames } from '@/common/utils';
 interface SectionProps {
   title: string;
   fromLeft?: boolean;
@@ -24,7 +24,7 @@ if (fromRight) {
   <div class="section">
     <div
       id={`${sectionTitle}-content`}
-      class={cn(
+      class={classNames(
         'section-content',
         direction === '' ? '' : `hidden ${direction}`
       )}

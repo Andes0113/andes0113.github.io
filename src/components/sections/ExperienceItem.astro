@@ -2,7 +2,7 @@
 import type { SkillType } from '@/common/data';
 import { skills } from '@/common/data';
 import Skill from './Skill.astro';
-import { cn } from '@/common';
+import { classNames } from '@/common/utils';
 
 export interface ExperienceItemProps {
   title: string;
@@ -42,7 +42,7 @@ if (fromRight) {
 const companyId = company.split(' ').join('-');
 ---
 
-<div class={cn('experience-item', direction)} id={companyId}>
+<div class={classNames('experience-item', direction)} id={companyId}>
   <div class="experience-item-header">
     <div>
       <p>{company}</p>

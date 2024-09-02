@@ -22,6 +22,9 @@ const { title } = Astro.props;
 </html>
 <style is:global>
   :root {
+    background-color: hsl(222.2 84% 4.9%);
+
+    /* --background: 222.2 84% 4.9%; */
     --accent: 136, 58, 234;
     --accent-light: 224, 204, 250;
     --accent-dark: 49, 10, 101;
@@ -31,6 +34,7 @@ const { title } = Astro.props;
       rgb(var(--accent-light)) 30%,
       white 60%
     );
+    /* background-color: var(--background); */
     scrollbar-color: rgb(184, 183, 183) rgb(13, 17, 26);
   }
   html {
