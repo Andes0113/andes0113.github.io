@@ -1,7 +1,15 @@
 import type { ProjectType } from '@/common/data';
-import horseback from '@/assets/horseback.png';
+import ProjectStatusIcon from './ProjectStatusIcon';
+import ImagePreview from './ImagePreview';
+import '@/styles/ImagePreview.css';
 
-export default function ProjectCard({ title, blurb, link }: ProjectType) {
+export default function ProjectCard({
+  title,
+  blurb,
+  link,
+  images,
+  status,
+}: ProjectType) {
   const strippedLink = link.substring('https://'.length);
   return (
     <div className="project-card">
@@ -9,14 +17,19 @@ export default function ProjectCard({ title, blurb, link }: ProjectType) {
         <a className="link-wrapper" href={link} target="_blank">
           <h3>
             {title.split('').map((char, index) => (
-              <span>{char === ' ' ? '\u00A0' : char}</span>
+              <span key={index}>{char === ' ' ? '\u00A0' : char}</span>
             ))}
           </h3>
           <span className="stripped-link">{strippedLink}</span>
         </a>
+        {/* <div>
+          {status.map((status) => (
+            <ProjectStatusIcon status={status} />
+          ))}
+        </div> */}
         <p className="project-blurb">{blurb}</p>
       </div>
-      <img src={horseback.src} />
+      <ImagePreview images={images} />
     </div>
   );
 }

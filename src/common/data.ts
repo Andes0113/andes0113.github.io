@@ -81,20 +81,13 @@ export type ProjectType = {
   link: string;
   blurb: string;
   details: string[];
-  images: any[];
+  images: RichImage[];
   tech: string[];
   status: ProjectStatus[];
 };
 
-export const projects: ProjectType[] = [
-  {
-    title: 'AnkiAlgo',
-    status: ['Work in Progress'],
-    link: 'https://github.com/Andes0113/anki-algo',
-    blurb:
-      'A website for practicing algorithms questions using spaced repetition',
-    details: [''],
-    images: [],
-    tech: ['TypeScript', 'Next.js', 'Postgres', 'Docker', 'Java', 'AWS'],
-  },
-];
+export type RichImage = {
+  id: string;
+  src: string;
+  alt: string;
+};
