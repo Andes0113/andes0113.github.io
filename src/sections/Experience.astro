@@ -1,6 +1,6 @@
 ---
-import ExperienceItem from './ExperienceItem.astro';
-import type { ExperienceItemProps } from './ExperienceItem.astro';
+import ExperienceItem from '@/components/ExperienceItem.astro';
+import type { ExperienceItemProps } from '../components/ExperienceItem.astro';
 
 const experiences: ExperienceItemProps[] = [
   {
@@ -61,6 +61,37 @@ const experiences: ExperienceItemProps[] = [
 <div class="experience-container">
   {experiences.map((experience) => <ExperienceItem {...experience} />)}
 </div>
+
+<script>
+  const items = document.querySelectorAll('.experience-item');
+  items.forEach((item) => {
+    const companyId = item.children[0].children[0].children[0]
+      .textContent!.trim()
+      .split(' ')
+      .join('-');
+
+    const intersectionAnchor = item.querySelector('.intersection-anchor');
+    if (!intersectionAnchor) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          toggleItem(companyId);
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+    observer.observe(intersectionAnchor);
+  });
+
+  function toggleItem(companyId: string) {
+    const item = document.querySelector(`#${companyId}`);
+
+    if (item) {
+      item.classList.remove('from-right', 'from-left');
+    }
+  }
+</script>
 
 <style>
   .experience-container {

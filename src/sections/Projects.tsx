@@ -1,11 +1,9 @@
+import '@/styles/Projects.css';
+import ProjectCard from '@/components/ProjectCard';
 import { useEffect } from 'react';
+import { projects } from '@/common/data';
 
-interface CardProps {
-  title: string;
-  description: string;
-}
-
-export default function ProjectCard({ title, description }: CardProps) {
+export default function Projects() {
   useEffect(() => {
     const titleElement = document.querySelector('.project-card h3');
     if (titleElement) {
@@ -16,15 +14,12 @@ export default function ProjectCard({ title, description }: CardProps) {
       }
     }
   }, []);
+
   return (
-    <div className="project-card">
-      <h3>
-        {title.split('').map((char, index) => (
-          <span key={index}>{char === ' ' ? '\u00A0' : char}</span>
-        ))}
-      </h3>
-      <span></span>
-      <p>{description}</p>
+    <div className="projects">
+      {projects.map((project) => (
+        <ProjectCard key={project.title} {...project} />
+      ))}
     </div>
   );
 }

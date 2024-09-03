@@ -67,37 +67,6 @@ const companyId = company.split(' ').join('-');
   </div>
 </div>
 
-<script>
-  const items = document.querySelectorAll('.experience-item');
-  items.forEach((item) => {
-    const companyId = item.children[0].children[0].children[0]
-      .textContent!.trim()
-      .split(' ')
-      .join('-');
-
-    const intersectionAnchor = item.querySelector('.intersection-anchor');
-    if (!intersectionAnchor) return;
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          toggleItem(companyId);
-          observer.unobserve(entry.target);
-        }
-      });
-    });
-    observer.observe(intersectionAnchor);
-  });
-
-  function toggleItem(companyId: string) {
-    const item = document.querySelector(`#${companyId}`);
-
-    if (item) {
-      item.classList.remove('from-right', 'from-left');
-    }
-  }
-</script>
-
 <style>
   .from-right {
     margin-left: 20%;

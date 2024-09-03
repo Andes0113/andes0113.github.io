@@ -1,7 +1,7 @@
 ---
 import horseback from '@/assets/horseback.png';
 import IllinoisLogo from '@/assets/illinoislogo.png';
-import CaptionedImage from './CaptionedImage.astro';
+import CaptionedImage from '../components/CaptionedImage.astro';
 import { Image } from 'astro:assets';
 ---
 
@@ -40,7 +40,7 @@ import { Image } from 'astro:assets';
 
 <style>
   a {
-    color: #0897e4;
+    color: var(--link);
   }
   a:hover {
     text-decoration: underline;
