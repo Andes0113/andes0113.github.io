@@ -1,16 +1,26 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { RichImage } from '@/common/data';
 
 export default function ImagePreview({ images }: { images: RichImage[] }) {
+  const timeoutRef = useRef<number | undefined>();
   const [selected, setSelected] = useState(0);
   const selectedImage = images[selected];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
+  const setSelectedAndResetTimeout = (idx: number) => {
+    clearInterval(timeoutRef.current);
+    timeoutRef.current = setInterval(() => {
       setSelected((sel) => (sel < images.length - 1 ? sel + 1 : 0));
     }, 5000);
 
-    return () => clearInterval(interval);
+    setSelected(idx);
+  };
+
+  useEffect(() => {
+    timeoutRef.current = setInterval(() => {
+      setSelected((sel) => (sel < images.length - 1 ? sel + 1 : 0));
+    }, 5000);
+
+    return () => clearInterval(timeoutRef.current);
   }, []);
 
   // Add indexes to images to maintain their order
@@ -33,7 +43,7 @@ export default function ImagePreview({ images }: { images: RichImage[] }) {
             <img
               src={image.src}
               alt={image.alt}
-              onClick={() => setSelected(image.idx)}
+              onClick={() => setSelectedAndResetTimeout(image.idx)}
             />
           </button>
         ))}
