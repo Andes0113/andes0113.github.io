@@ -7,13 +7,14 @@ export default function ProjectCard({
   title,
   blurb,
   link,
-  images,
+  details,
   status,
+  images,
 }: ProjectType) {
   const strippedLink = link.substring('https://'.length);
   return (
     <div className="project-card">
-      <div>
+      <div className="project-content">
         <a className="link-wrapper" href={link} target="_blank">
           <h3>
             {title.split('').map((char, index) => (
@@ -27,7 +28,12 @@ export default function ProjectCard({
             <ProjectStatusIcon status={status} />
           ))}
         </div> */}
-        <p className="project-blurb">{blurb}</p>
+        <p className="project-blurb project-text">{blurb}</p>
+        <div className="project-details">
+          {details.map((detail) => (
+            <p className="project-text">{detail}</p>
+          ))}
+        </div>
       </div>
       <ImagePreview images={images} />
     </div>
