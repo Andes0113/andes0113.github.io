@@ -13,7 +13,17 @@ const projects: ProjectType[] = [
     link: 'https://github.com/Andes0113/anki-algo',
     blurb:
       'A website for practicing algorithms questions using spaced repetition',
-    details: [''],
+    details: [
+      `I'm building AnkiAlgo to provide a streamlined and adaptive experience for 
+      professionals to prepare for technical interviews`,
+
+      `AnkiAlgo uses a combination of an ELO system and user performance to 
+      recommend questions to address a user's weaknesses at times designed to 
+      cement question concepts and patterns into a user's mind`,
+
+      `I use the similiarity between vector embeddings of each question's optimal 
+      solution to provide fine-grained comparisons of question strategies`,
+    ],
     images: [
       { id: '1', src: horseback.src, alt: 'horseback' },
       { id: '2', src: IllinoisLogo.src, alt: 'horseback' },
@@ -26,17 +36,6 @@ const projects: ProjectType[] = [
 ];
 
 export default function Projects() {
-  useEffect(() => {
-    const titleElement = document.querySelector('.project-card h3');
-    if (titleElement) {
-      const children = titleElement.children;
-      for (let i = 0; i < children.length; i++) {
-        const child = children[i] as HTMLElement;
-        child.style.animationDelay = `${i * 0.05}s`;
-      }
-    }
-  }, []);
-
   return (
     <div className="projects">
       {projects.map((project) => (

@@ -18,16 +18,13 @@ export default function ProjectCard({
         <a className="link-wrapper" href={link} target="_blank">
           <h3>
             {title.split('').map((char, index) => (
-              <span key={index}>{char === ' ' ? '\u00A0' : char}</span>
+              <span style={{ animationDelay: `${index * 0.05}s` }} key={index}>
+                {char === ' ' ? '\u00A0' : char}
+              </span>
             ))}
           </h3>
           <span className="stripped-link">{strippedLink}</span>
         </a>
-        {/* <div>
-          {status.map((status) => (
-            <ProjectStatusIcon status={status} />
-          ))}
-        </div> */}
         <p className="project-blurb project-text">{blurb}</p>
         <div className="project-details">
           {details.map((detail) => (
