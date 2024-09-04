@@ -7,7 +7,7 @@ export default function ImagePreview({ images }: { images: RichImage[] }) {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setSelected((sel) => sel + 1);
+      setSelected((sel) => (sel < images.length - 1 ? sel + 1 : 0));
     }, 5000);
 
     return () => clearInterval(interval);
