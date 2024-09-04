@@ -19,6 +19,7 @@ const projects: ProjectType[] = [
       { id: '2', src: IllinoisLogo.src, alt: 'horseback' },
       { id: '3', src: horseback.src, alt: 'horseback' },
       { id: '4', src: IllinoisLogo.src, alt: 'horseback' },
+      { id: '5', src: IllinoisLogo.src, alt: 'horseback' },
     ],
     tech: ['TypeScript', 'Next.js', 'Postgres', 'Docker', 'Java', 'AWS'],
   },

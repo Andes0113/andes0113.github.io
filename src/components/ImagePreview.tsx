@@ -1,10 +1,26 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { RichImage } from '@/common/data';
 
 export default function ImagePreview({ images }: { images: RichImage[] }) {
-  const [selectedId, setSelectedId] = useState(images[0].id);
-  const selectedImage = images.find((img) => img.id == selectedId)!;
-  const previewedImages = images.filter((img) => img.id != selectedId);
+  const [selected, setSelected] = useState(0);
+  const selectedImage = images[selected];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSelected((sel) => sel + 1);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Add indexes to images to maintain their order
+  const indexedImages = images.map((img, idx) => ({ ...img, idx }));
+
+  // Set image as the "beginning" of the carousel when selected
+  // Previewed images start as the images after then wrap to images before
+  const previewedImages = indexedImages
+    .slice(selected + 1)
+    .concat(indexedImages.slice(0, selected));
 
   return (
     <div className="image-previewer">
@@ -17,7 +33,7 @@ export default function ImagePreview({ images }: { images: RichImage[] }) {
             <img
               src={image.src}
               alt={image.alt}
-              onClick={() => setSelectedId(image.id)}
+              onClick={() => setSelected(image.idx)}
             />
           </button>
         ))}
