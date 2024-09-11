@@ -9,6 +9,7 @@ import AnkiAlgoLogo from '@/assets/projects/ankialgo.png';
 import RembrandtLogo from '@/assets/projects/rembrandt.png';
 import CavsLogo from '@/assets/cavs.png';
 import Gators from '@/assets/gators.png';
+import Sedna from '@/assets/sedna.png';
 import CaptionedImage from '../components/CaptionedImage.astro';
 import { Image } from 'astro:assets';
 ---
@@ -75,6 +76,9 @@ import { Image } from 'astro:assets';
   </div>
   <div id="gators" class="section">
     <Image src={Gators} alt="The logo of the Florida Gators" />
+  </div>
+  <div id="sedna" class="section">
+    <Image src={Sedna} alt="My dog, sedna" />
   </div>
 </div>
 
@@ -181,16 +185,23 @@ import { Image } from 'astro:assets';
   /* Misc images */
 
   #cavs {
-    grid-row: 9;
-    grid-column: 11;
+    grid-row: 8;
+    grid-column: 6;
     overflow: visible;
   }
   #cavs > img {
     overflow: visible;
   }
   #gators {
-    grid-row: 9;
-    grid-column: 12;
+    grid-row: 8;
+    grid-column: 8;
+  }
+  #sedna {
+    grid-row: 8 / 10;
+    grid-column: 10 / 12;
+  }
+  #sedna > img {
+    border-radius: 1rem;
   }
 
   @keyframes bubble {
