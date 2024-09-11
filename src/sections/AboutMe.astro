@@ -5,8 +5,10 @@ import IllinoisLogo from '@/assets/illinoislogo.png';
 import VolunturboLogo from '@/assets/projects/volunturbo.png';
 import CeptronLogo from '@/assets/projects/ceptron.png';
 import ClubfinityLogo from '@/assets/projects/clubfinity.png';
-import SixLogo from '@/assets/projects/six.png';
 import AnkiAlgoLogo from '@/assets/projects/ankialgo.png';
+import RembrandtLogo from '@/assets/projects/rembrandt.png';
+import CavsLogo from '@/assets/cavs.png';
+import Gators from '@/assets/gators.png';
 import CaptionedImage from '../components/CaptionedImage.astro';
 import { Image } from 'astro:assets';
 ---
@@ -53,8 +55,8 @@ import { Image } from 'astro:assets';
   <div id="ankialgo" class="section">
     <Image src={AnkiAlgoLogo} alt="AnkiAlgo Logo" />
   </div>
-  <div id="six" class="section">
-    <Image src={SixLogo} alt="Six Logo" />
+  <div id="rembrandt" class="section">
+    <Image src={RembrandtLogo} alt="Rembrandt Logo" />
   </div>
   <div id="ceptron" class="section">
     <Image src={CeptronLogo} alt="Ceptron Logo" />
@@ -67,6 +69,12 @@ import { Image } from 'astro:assets';
   </div>
   <div id="ILL" class="section">
     <Image src={IllinoisLogo} alt="ILL" />
+  </div>
+  <div id="cavs" class="section">
+    <Image src={CavsLogo} alt="The logo of the Cleveland Cavaliers" />
+  </div>
+  <div id="gators" class="section">
+    <Image src={Gators} alt="The logo of the Florida Gators" />
   </div>
 </div>
 
@@ -143,7 +151,7 @@ import { Image } from 'astro:assets';
     grid-column: 2 / 4;
     overflow: visible;
   }
-  #six {
+  #rembrandt {
     grid-row: 5;
     grid-column: 4;
     overflow: visible;
@@ -168,6 +176,21 @@ import { Image } from 'astro:assets';
   }
   #volunturbo > img {
     border-radius: 5px;
+  }
+
+  /* Misc images */
+
+  #cavs {
+    grid-row: 9;
+    grid-column: 11;
+    overflow: visible;
+  }
+  #cavs > img {
+    overflow: visible;
+  }
+  #gators {
+    grid-row: 9;
+    grid-column: 12;
   }
 
   @keyframes bubble {

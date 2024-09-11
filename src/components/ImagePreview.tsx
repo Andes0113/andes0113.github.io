@@ -37,17 +37,19 @@ export default function ImagePreview({ images }: { images: RichImage[] }) {
       <div className="main-image-container">
         <img src={selectedImage.src} alt={selectedImage.alt} />
       </div>
-      {previewedImages.length > 0 && <div className="image-previews">
-        { previewedImages.map((image) => (
-          <button key={image.id}>
-            <img
-              src={image.src}
-              alt={image.alt}
-              onClick={() => setSelectedAndResetTimeout(image.idx)}
-            />
-          </button>
-        ))}
-      </div>}
+      {previewedImages.length > 0 && (
+        <div className="image-previews">
+          {previewedImages.map((image) => (
+            <button key={image.id}>
+              <img
+                src={image.src}
+                alt={image.alt}
+                onClick={() => setSelectedAndResetTimeout(image.idx)}
+              />
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
