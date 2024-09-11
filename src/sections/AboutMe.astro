@@ -1,11 +1,24 @@
 ---
 import horseback from '@/assets/horseback.png';
+import hiking from '@/assets/hiking.png';
 import IllinoisLogo from '@/assets/illinoislogo.png';
+import VolunturboLogo from '@/assets/projects/volunturbo.png';
+import CeptronLogo from '@/assets/projects/ceptron.png';
+import ClubfinityLogo from '@/assets/projects/clubfinity.png';
+import SixLogo from '@/assets/projects/six.png';
+import AnkiAlgoLogo from '@/assets/projects/ankialgo.png';
 import CaptionedImage from '../components/CaptionedImage.astro';
 import { Image } from 'astro:assets';
 ---
 
 <div id="about-me">
+  <div id="hiking" class="section">
+    <CaptionedImage
+      src={hiking}
+      alt="Two people at the summit of Acadia Mountain"
+      caption="Striving for ever-growing heights"
+    />
+  </div>
   <div id="horseback" class="section">
     <CaptionedImage
       src={horseback}
@@ -13,7 +26,7 @@ import { Image } from 'astro:assets';
       caption="Me (valiantly) always looking for opportunity"
     />
   </div>
-  <div id="about-me-text" class="section">
+  <div id="about-me-text" class="section text">
     <p>
       I'm in my 4th year studying computer science at the University of Illinois
       at Urbana-Champaign. My <a href="#My-Toolbox">skills</a> are most developed
@@ -21,20 +34,39 @@ import { Image } from 'astro:assets';
       working with the entire stack, from frontend to infrastructure.
     </p>
   </div>
-  <p id="hobbies" class="section">
-    When I'm not coding, I like to play basketball, read, and hang out with
-    family and friends.
-  </p>
-  <div id="projects-paragraph" class="section">
+  <div id="projects-paragraph" class="section text">
     <p>
-      I love to learn by doing, so I'm always bringing my ideas to life and
-      learning interesting tech in my
+      I love to learn by doing, so I'm always bringing cool ideas to life and
+      learning interesting tech through
       <a href="#Projects">projects</a>
     </p>
   </div>
-  <div id="banner" class="section"></div>
+  <p id="education" class="section text">
+    I picked up some valuable knowledge in low-level and distributed systems,
+    networks, and machine learning during my time at Illinois.
+  </p>
+  <p id="hobbies" class="section text">
+    When I'm not coding, I like to play basketball, read, and hang out with
+    family and friends.
+  </p>
+  <!-- This is so rough but it gets the job done -->
+  <div id="ankialgo" class="section">
+    <Image src={AnkiAlgoLogo} alt="AnkiAlgo Logo" />
+  </div>
+  <div id="six" class="section">
+    <Image src={SixLogo} alt="Six Logo" />
+  </div>
+  <div id="ceptron" class="section">
+    <Image src={CeptronLogo} alt="Ceptron Logo" />
+  </div>
+  <div id="clubfinity" class="section">
+    <Image src={ClubfinityLogo} alt="Clubfinity Logo" />
+  </div>
+  <div id="volunturbo" class="section">
+    <Image src={VolunturboLogo} alt="VolunTurbo Logo" />
+  </div>
   <div id="ILL" class="section">
-    <Image src={IllinoisLogo} alt="ILL" loading="eager" />
+    <Image src={IllinoisLogo} alt="ILL" />
   </div>
 </div>
 
@@ -46,13 +78,17 @@ import { Image } from 'astro:assets';
     text-decoration: underline;
   }
 
+  .text {
+    z-index: 2;
+  }
+
   #about-me {
     height: 80vh;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(12, 1fr);
+    grid-template-rows: repeat(10, 1fr);
     /* border: 1px solid red; */
-    gap: 0.25rem;
+    gap: 0.5rem;
   }
   .section {
     /* border: 1px solid red; */
@@ -61,37 +97,90 @@ import { Image } from 'astro:assets';
     justify-content: center;
     align-items: center;
   }
-  #banner {
-    grid-row: 3 / 7;
-    grid-column: 1 / 9;
-  }
+
+  /* Text */
   #about-me-text {
     grid-row: 1 / 3;
     grid-column: 1 / 9;
   }
   #projects-paragraph {
-    grid-row: 7 / 9;
-    grid-column: 6 / 12;
-    text-align: end;
+    grid-row: 4;
+    grid-column: 2 / 8;
   }
-  #reading-list {
-    grid-row: 8 / 13;
-    grid-column: 9 / 13;
-    overflow: hidden;
+  #education {
+    grid-row: 7;
+    grid-column: 5 / 12;
   }
+  #hobbies {
+    grid-row: 9;
+    grid-column: 5 / 10;
+  }
+
+  /* Images */
+
   #horseback {
     grid-row: 1 / 7;
     grid-column: 9 / 13;
     animation: bubbleLeft 1.5s ease-in-out 1;
   }
   #ILL {
-    grid-row: 7 / 9;
-    grid-column: 12 / 13;
+    grid-row: 6 / 9;
+    grid-column: 12;
     padding: 0.5rem;
   }
-  #hobbies {
-    grid-row: 11 / 13;
-    grid-column: 4 / 9;
+  #hiking {
+    grid-row: 6 / 10;
+    grid-column: 1 / 5;
+    animation-delay: 3s;
+    animation: bubble 1s linear 1s 1;
+    margin-bottom: -1rem;
+  }
+
+  /* Project Logos */
+
+  #ankialgo {
+    grid-row: 3;
+    grid-column: 2 / 4;
+    overflow: visible;
+  }
+  #six {
+    grid-row: 5;
+    grid-column: 4;
+    overflow: visible;
+  }
+  #ceptron {
+    grid-row: 5;
+    grid-column: 2;
+    /* padding: 0.5rem; */
+    overflow: visible;
+  }
+  #clubfinity {
+    grid-row: 5;
+    grid-column: 6 / 8;
+    padding: 1.5rem;
+  }
+  #clubfinity > img {
+    border-radius: 5px;
+  }
+  #volunturbo {
+    grid-row: 3;
+    grid-column: 5 / 8;
+  }
+  #volunturbo > img {
+    border-radius: 5px;
+  }
+
+  @keyframes bubble {
+    40%,
+    50% {
+      transform: scale(1.03);
+    }
+    80% {
+      transform: scale(0.98);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
 
   @keyframes bubbleLeft {

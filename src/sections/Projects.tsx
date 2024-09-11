@@ -15,14 +15,14 @@ const projects: ProjectType[] = [
       'A website for practicing algorithms questions using spaced repetition',
     details: [
       `I'm building AnkiAlgo to provide a streamlined and adaptive experience for 
-      professionals to prepare for technical interviews`,
+      professionals to prepare for technical interviews.`,
 
-      `AnkiAlgo uses a combination of an ELO system and user performance to 
-      recommend questions to address a user's weaknesses at times designed to 
-      cement question concepts and patterns into a user's mind`,
+      `AnkiAlgo uses a combination of an ELO system and user performance tracking
+      to recommend questions to address a user's weaknesses at times designed to 
+      cement understanding of question concepts and patterns.`,
 
       `I use the similiarity between vector embeddings of each question's optimal 
-      solution to provide fine-grained comparisons of question strategies`,
+      solution to provide fine-grained comparisons of question strategies.`,
     ],
     images: [
       { id: '1', src: horseback.src, alt: 'horseback' },
@@ -33,6 +33,15 @@ const projects: ProjectType[] = [
     ],
     tech: ['TypeScript', 'Next.js', 'Postgres', 'Docker', 'Java', 'AWS'],
   },
+  {
+    title: 'Ceptron',
+    status: ['Completed', 'Shelved'],
+    link: 'https://github.com/yimothysu/ceptron',
+    blurb: `An AI assistant tool suite, in the style of MacOS's spotlight`,
+    details: ['I was making GPT wrappers before it was cool. 😎'],
+    images: [{ id: '1', src: horseback.src, alt: 'horseback'}],
+    tech: [],
+  }
 ];
 
 export default function Projects() {

@@ -37,8 +37,8 @@ export default function ImagePreview({ images }: { images: RichImage[] }) {
       <div className="main-image-container">
         <img src={selectedImage.src} alt={selectedImage.alt} />
       </div>
-      <div className="image-previews">
-        {previewedImages.map((image) => (
+      {previewedImages.length > 0 && <div className="image-previews">
+        { previewedImages.map((image) => (
           <button key={image.id}>
             <img
               src={image.src}
@@ -47,7 +47,7 @@ export default function ImagePreview({ images }: { images: RichImage[] }) {
             />
           </button>
         ))}
-      </div>
+      </div>}
     </div>
   );
 }
