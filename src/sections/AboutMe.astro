@@ -78,7 +78,11 @@ import { Image } from 'astro:assets';
     <Image src={Gators} alt="The logo of the Florida Gators" />
   </div>
   <div id="sedna" class="section">
-    <Image src={Sedna} alt="My dog, sedna" />
+    <CaptionedImage
+      src={Sedna}
+      alt="My dog, sedna"
+      caption={`Who's a good boy?`}
+    />
   </div>
 </div>
 
