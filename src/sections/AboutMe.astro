@@ -4,7 +4,7 @@ import hiking from '@/assets/hiking.png';
 import IllinoisLogo from '@/assets/IllinoisLogo.png';
 import VolunturboLogo from '@/assets/projects/volunturbo.png';
 import CeptronLogo from '@/assets/projects/ceptron.png';
-import ClubfinityLogo from '@/assets/projects/clubfinity.png';
+import ClubfinityLogo from '@/assets/projects/clubfinity/ClubfinityLogo.png';
 import AnkiAlgoLogo from '@/assets/projects/ankialgo.png';
 import RembrandtLogo from '@/assets/projects/rembrandt.png';
 import CavsLogo from '@/assets/cavs.png';
@@ -71,12 +71,12 @@ import { Image } from 'astro:assets';
   <div id="ILL" class="section">
     <Image src={IllinoisLogo} alt="ILL" />
   </div>
-  <div id="cavs" class="section">
+  <!-- <div id="cavs" class="section">
     <Image src={CavsLogo} alt="The logo of the Cleveland Cavaliers" />
   </div>
   <div id="gators" class="section">
     <Image src={Gators} alt="The logo of the Florida Gators" />
-  </div>
+  </div> -->
   <div id="sedna" class="section">
     <CaptionedImage
       src={Sedna}
@@ -121,7 +121,7 @@ import { Image } from 'astro:assets';
   }
   #projects-paragraph {
     grid-row: 4;
-    grid-column: 2 / 8;
+    grid-column: 1 / 7;
   }
   #education {
     grid-row: 7;
@@ -155,32 +155,33 @@ import { Image } from 'astro:assets';
   /* Project Logos */
 
   #ankialgo {
-    grid-row: 3;
-    grid-column: 2 / 4;
+    grid-row: 5;
+    /* grid-column: 3; */
     overflow: visible;
   }
   #rembrandt {
     grid-row: 5;
-    grid-column: 4;
+    /* grid-column: 5; */
     overflow: visible;
+    padding: 0.5rem;
   }
   #ceptron {
     grid-row: 5;
-    grid-column: 2;
-    /* padding: 0.5rem; */
+    /* grid-column: 3; */
+    padding: 0.5rem;
     overflow: visible;
   }
   #clubfinity {
     grid-row: 5;
-    grid-column: 6 / 8;
-    padding: 1.5rem;
+    /* grid-column: 4; */
+    width: 100%;
   }
   #clubfinity > img {
     border-radius: 5px;
   }
   #volunturbo {
-    grid-row: 3;
-    grid-column: 5 / 8;
+    grid-row: 5;
+    grid-column: 4 / 6;
   }
   #volunturbo > img {
     border-radius: 5px;
