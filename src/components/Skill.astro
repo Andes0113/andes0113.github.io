@@ -16,8 +16,10 @@ const { name, Icon, color } = Astro.props;
 </div>
 
 <style define:vars={{ color }}>
-  .skill {
+  .skill svg {
     color: white;
+  }
+  .skill {
     display: flex;
     gap: 0.5rem;
     align-items: center;
@@ -32,18 +34,25 @@ const { name, Icon, color } = Astro.props;
     color: var(--color);
     transform: scale(1.2);
   }
+  .skill:hover span {
+    color: white;
+  }
   .skill span {
     margin-left: 1.5rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     border-top-left-radius: 0.25rem;
     border-bottom-left-radius: 0.25rem;
-    background-color: #13151a;
+    background-color: var(--background);
     width: 0;
   }
   .skill:hover span {
     transition: all 700ms ease;
-    background-image: linear-gradient(to right, var(--color), #13151a);
+    background-image: linear-gradient(
+      to right,
+      var(--color),
+      var(--background)
+    );
     margin-left: 2rem;
     width: 100%;
     background-color: var(--color);
