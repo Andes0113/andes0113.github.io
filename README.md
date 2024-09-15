@@ -6,4 +6,4 @@ This is the repository for my personal portfolio, built with Astro.
 
 - **Astro**: A static site builder that uses modern JavaScript and server-side rendering.
 - **TypeScript**: For static typing and enhanced development experience.
-- **React**: For certain sections, improving ability to manage state and dynamically render content based on that state.
+- **React**: For certain sections, the improved ability to manage state and dynamically render content based on that state.
