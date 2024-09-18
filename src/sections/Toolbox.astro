@@ -37,6 +37,19 @@ const groupedSkills = skills.reduce<Record<string, SkillType[]>>(
     align-items: start;
     padding: 0.25rem 1rem;
   }
+  @media (max-width: 800px) {
+    .skills-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media (max-width: 600px) {
+    .skills-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .skill-type: {
+    border: 1px solid red;
+  }
   .skill-type h3 {
     margin-bottom: 0.75rem;
     color: whitesmoke;
