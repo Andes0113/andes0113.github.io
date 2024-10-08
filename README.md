@@ -1,6 +1,6 @@
 # Alex Rowe's Portfolio
 
-This is the repository for my personal portfolio, built with Astro.
+This is the repository for my personal portfolio, built with Astro and hosted as a static site with Github Pages.
 
 ## Tech Used
 
