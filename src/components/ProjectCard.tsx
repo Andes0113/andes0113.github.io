@@ -27,8 +27,10 @@ export default function ProjectCard({
         </a>
         <p className="project-blurb project-text">{blurb}</p>
         <div className="project-details">
-          {details.map((detail) => (
-            <p className="project-text">{detail}</p>
+          {details.map((detail, idx) => (
+            <p className="project-text" key={idx}>
+              {detail}
+            </p>
           ))}
         </div>
       </div>
