@@ -4,6 +4,20 @@ import type { ExperienceItemProps } from '../components/ExperienceItem.astro';
 
 const experiences: ExperienceItemProps[] = [
   {
+    title: 'Software Engineer',
+    company: 'Meta',
+    companyDescription:
+      'Meta is a global technology company with a mission to make a more connected world.',
+    concentration: 'Backend',
+    date: 'August 2025 - Present',
+    description: [
+      `I'm a software engineer at Menlo Park. If you work at Meta or live in the Bay Area, \
+      feel free to reach out! I'm always happy to make some new friends.`,
+    ],
+    techStack: [],
+    fromRight: true,
+  },
+  {
     title: 'Software Engineer Intern',
     company: 'Wizards of the Coast',
     companyDescription:
@@ -24,7 +38,7 @@ const experiences: ExperienceItemProps[] = [
       developers within the company.',
     ],
     techStack: ['Go', 'AWS', 'Postgres', 'Redis', 'Kubernetes', 'C#', '.NET'],
-    fromRight: true,
+    fromLeft: true,
   },
   {
     title: 'Software Engineer',
@@ -53,7 +67,7 @@ const experiences: ExperienceItemProps[] = [
       'Tailwind',
       'Go',
     ],
-    fromLeft: true,
+    fromRight: true,
   },
 ];
 ---
