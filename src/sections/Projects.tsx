@@ -32,7 +32,7 @@ const projects: ProjectType[] = [
       solution to provide fine-grained comparisons of question strategies.`,
     ],
     images: [{ id: '1', src: AnkiAlgoLogo.src, alt: 'AnkiAlgo Logo' }],
-    tech: ['TypeScript', 'Next.js', 'Postgres', 'Docker', 'Java', 'AWS'],
+    tech: ['TypeScript', 'Next.js', 'Postgres', 'Docker', 'AWS'],
   },
   {
     title: 'Rembrandt',

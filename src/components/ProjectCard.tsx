@@ -1,5 +1,4 @@
 import type { ProjectType } from '@/common/data';
-import ProjectStatusIcon from './ProjectStatusIcon';
 import ImagePreview from './ImagePreview';
 import '@/styles/ImagePreview.css';
 
@@ -8,7 +7,6 @@ export default function ProjectCard({
   blurb,
   link,
   details,
-  status,
   images,
 }: ProjectType) {
   const strippedLink = link.substring('https://'.length);

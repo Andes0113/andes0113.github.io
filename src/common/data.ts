@@ -12,10 +12,9 @@ import {
   SiTailwindcss,
   SiMongodb,
   SiPytorch,
-  SiSpring,
+  SiCplusplus,
 } from 'react-icons/si';
 import { DiRedis } from 'react-icons/di';
-import { FaJava } from 'react-icons/fa';
 import { FaAws } from 'react-icons/fa6';
 import type { IconType } from 'react-icons';
 
@@ -34,15 +33,8 @@ export const skills: SkillType[] = [
     type: 'Languages',
     color: '#3178C6',
   },
-  { name: 'Java', Icon: FaJava, type: 'Languages', color: '#F7931A' },
   { name: 'Python', Icon: SiPython, type: 'Languages', color: '#FFD43B' },
   { name: 'Next.js', Icon: SiNextdotjs, type: 'Frameworks', color: '#B8B7B7' },
-  {
-    name: 'Spring',
-    Icon: SiSpring,
-    type: 'Frameworks',
-    color: '#6DB33D',
-  },
   { name: 'PyTorch', Icon: SiPytorch, type: 'Frameworks', color: '#FF4F00' },
   { name: 'Postgres', Icon: SiPostgresql, type: 'Databases', color: '#336791' },
   { name: 'Redis', Icon: DiRedis, type: 'Databases', color: '#c5302a' },
@@ -63,6 +55,12 @@ export const skills: SkillType[] = [
     Icon: SiKubernetes,
     type: 'Deployment',
     color: '#326CE5',
+  },
+  {
+    name: 'C++',
+    Icon: SiCplusplus,
+    type: 'Languages',
+    color: '#00599C',
   },
 ];
 
