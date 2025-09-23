@@ -34,30 +34,32 @@ const { name, Icon, color } = Astro.props;
     color: var(--color);
     transform: scale(1.2);
   }
-  .skill:hover span {
-    color: white;
-  }
   .skill span {
+    position: relative;
     margin-left: 1.5rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding: 0 0.5rem;
     border-top-left-radius: 0.25rem;
     border-bottom-left-radius: 0.25rem;
-    background-color: var(--background);
     width: 0;
-  }
-  .skill:hover span {
-    transition: all 700ms ease;
     background-image: linear-gradient(
       to right,
       var(--color),
       var(--background)
     );
+    background-repeat: no-repeat;
+    background-size: 0% 100%; /* collapsed by default */
+    background-position: left center;
+    transition: all 300ms ease-in;
+  }
+
+  .skill:hover span {
     margin-left: 2rem;
     width: 100%;
-    background-color: var(--color);
-    background-clip: padding-box;
+    /* keep same gradient; just expand it */
+    background-size: 100% 100%;
+    color: white;
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
+    transition: all 700ms ease;
   }
 </style>
