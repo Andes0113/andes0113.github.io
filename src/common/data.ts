@@ -13,6 +13,7 @@ import {
   SiMongodb,
   SiPytorch,
   SiCplusplus,
+  SiRust,
 } from 'react-icons/si';
 import { DiRedis } from 'react-icons/di';
 import { FaAws } from 'react-icons/fa6';
@@ -61,6 +62,12 @@ export const skills: SkillType[] = [
     Icon: SiCplusplus,
     type: 'Languages',
     color: '#00599C',
+  },
+  {
+    name: 'Rust',
+    Icon: SiRust,
+    type: 'Languages',
+    color: '#e45a28',
   },
 ];
 
