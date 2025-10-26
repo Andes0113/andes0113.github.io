@@ -17,7 +17,7 @@ const projects: ProjectType[] = [
   {
     title: 'AnkiAlgo',
     status: ['Work in Progress'],
-    link: 'https://github.com/Andes0113/anki-algo',
+    link: '',
     blurb:
       'A website for practicing algorithms questions using spaced repetition',
     details: [
