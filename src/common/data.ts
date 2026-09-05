@@ -14,6 +14,8 @@ import {
   SiPytorch,
   SiCplusplus,
   SiRust,
+  SiNvidia,
+  SiPydantic,
 } from 'react-icons/si';
 import { DiRedis } from 'react-icons/di';
 import { FaAws } from 'react-icons/fa6';
@@ -68,6 +70,18 @@ export const skills: SkillType[] = [
     Icon: SiRust,
     type: 'Languages',
     color: '#e45a28',
+  },
+  {
+    name: 'CUDA',
+    Icon: SiNvidia,
+    type: 'Frameworks',
+    color: '#76B900',
+  },
+  {
+    name: 'Pydantic AI',
+    Icon: SiPydantic,
+    type: 'Frameworks',
+    color: '#D238E1',
   },
 ];
 
